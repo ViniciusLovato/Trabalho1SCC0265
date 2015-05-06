@@ -1,15 +1,18 @@
 <section class="col l4 offset-l4 m8 offset-m2 s10 offset-s1 white z-depth-4">
-    <form class="myForm">
+    <form class="myForm" ng-submit="login(userLogin.name, userLogin.password)">
+        {{message}}
         <h3 class="center-align">Login</h3>
         <div class="row">
             <div class="input-field col s12">
-                <input id="first_name" type="text" class="validate">
+                <input id="first_name" type="text" class="validate" ng-model="userLogin.name">
+                {{userLogin.name}}
                 <label for="first_name">Email</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <input id="password" type="password" class="validate">
+                <input id="password" type="password" class="validate" ng-model="userLogin.password">
+                {{userLogin.password}}
                 <label for="password">Senha</label>
             </div>
         </div>
