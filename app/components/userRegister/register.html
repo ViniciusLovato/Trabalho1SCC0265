@@ -1,5 +1,5 @@
 <section class="col l10 offset-l1 m8 offset-m2 s10 offset-s1 white z-depth-4" ng-app="UserRegisterApp">
-    <form name="form" class="myForm" ng-submit="registerUser()">
+    <form name="form" class="myForm" ng-submit="registerUser()" novalidate>
         {{ userRegister }} {{ teste }}
         
         <div class="row">
@@ -7,26 +7,25 @@
                 <h3 class="center-align">Novo usuário</h3>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input name="userRegisterName" id="first_name" type="text" ng-class="{invalid : requirement(form.userRegisterName)}" class="validate" required ng-model="userRegister.name">
+                        <input name="userRegisterName" id="first_name" type="text" class="validate" required ng-model="userRegister.name">
                         <label for="first_name">Nome Completo</label>
-                        <span ng-show="requirement(form.userRegisterName)">Name is required</span>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="email" type="email" class="validate" ng-model="userRegister.email">
+                        <input name="userRegisterEmail" id="email" type="email" class="validate" required ng-model="userRegister.email">
                         <label for="email">Email</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="password" type="password" class="validate" ng-model="userRegister.password">
+                        <input name="userRegisterPassword" id="password" type="password" class="validate" required ng-model="userRegister.password">
                         <label for="password">Nova Senha</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="confirm_password" type="password" class="validate" ng-model="userRegister.confirmPassword">
+                        <input name="userConfirmPassword" id="confirm_password" type="password" class="validate" required ng-model="userRegister.confirmPassword">
                         <label for="confirm_password">Confirmar Senha</label>
                     </div>
                 </div>
@@ -38,14 +37,14 @@
 
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="birthday" type="text" class="validate" ng-model="userRegister.birthday">
+                        <input name="userBirthday" id="birthday" type="text" class="validate" required ng-model="userRegister.birthday">
                         <label for="birthday">Data de Nascimento</label>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="city" type="text" class="validate" ng-model="userRegister.city">
+                        <input name="userCity" id="city" type="text" class="validate" required ng-model="userRegister.city">
                         <label for="city">Cidade</label>
                     </div>
                 </div>
@@ -53,18 +52,19 @@
 
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="state" type="text" class="validate" ng-mode="userRegister.state">
+                        <input name="userState" id="state" type="text" class="validate" required ng-model="userRegister.state">
                         <label for="state">Estado</label>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="phone_number" type="text" class="validate" ng-model="userRegister.phoneNumber">
+                        <input name="phoneNumber" id="phone_number" type="text" class="validate" required ng-model="userRegister.phoneNumber">
                         <label for="phone_number">Telefone</label>
                     </div>
                 </div>
             </div>
+			
             <div class="row">
                 <div class="col s12">
                     <div class="center-align">
