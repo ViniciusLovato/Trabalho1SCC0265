@@ -1,5 +1,5 @@
 // app/modules/patient/controllers.js
-angular.module('UserRegisterApp').controller('UserRegisterCtrl', function ($scope, dataFactory) {
+angular.module('UserRegisterApp').controller('UserRegisterCtrl', function ($scope, userFactory) {
     $scope.$on("$viewContentLoaded");
 
     $scope.userRegister = {};

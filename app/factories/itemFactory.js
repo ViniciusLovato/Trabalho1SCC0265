@@ -3,6 +3,7 @@ angular.module('RankingApp').factory('itemFactory', [function () {
     // "database"
     var items = [
         {
+            id : 1,
             author: "VINICIUS LOVATO",
             name: "Star Wars Battlefront",
             description: "FPS Star Wars game",
@@ -11,6 +12,7 @@ angular.module('RankingApp').factory('itemFactory', [function () {
             ranking: 5
         },
         {
+            id : 2,
             author: "VINICIUS LOVATO",
             name: "Starcraft II",
             description: "A really competitive strategy game",
@@ -22,8 +24,15 @@ angular.module('RankingApp').factory('itemFactory', [function () {
 
     return {
         registerItem: function(item){
+            item.id = items[items.length - 1].id + 1;
             items.push(item);
+        },
+        
+        getItemList : function(category){
+            return items;
         }
+        
+        getItem : function
     }
 
 }]);
