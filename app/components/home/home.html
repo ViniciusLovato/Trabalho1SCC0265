@@ -1,91 +1,33 @@
 <section class="col l9 m9 s12">
-    {{ message }}
-    <ul class="collapsible white z-depth-4" data-collapsible="accordion">
-        <li>
-            <div class="collapsible-header active"><i class="mdi-social-people-outline"></i>FPS</div>
-            <div class="row collapsible-body">
-                <div class="col l3 m6 s12">
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="wild_in_the_blue-961005.jpg">
-                            <span class="card-title">Howling wolf is awesome</span>
-                        </div>
-                        <div class="card-content">
-                            <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-                        </div>
-                        <div class="card-action">
-                            <span>AVALIACAO: over 9000</span>
-                            <a href="#">comparativo</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col l3 m6 s12">
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="wild_in_the_blue-961005.jpg">
-                            <span class="card-title">Howling wolf is awesome</span>
-                        </div>
-                        <div class="card-content">
-                            <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-                        </div>
-                        <div class="card-action">
-                            <span>AVALIACAO: over 9000</span>
-                            <a href="#">comparativo</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col l3 s12 m7">
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="wild_in_the_blue-961005.jpg">
-                            <span class="card-title">Howling wolf is awesome</span>
-                        </div>
-                        <div class="card-content">
-                            <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-                        </div>
-                        <div class="card-action">
-                            <span>AVALIACAO: over 9000</span>
-                            <a href="#">comparativo</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col l3 s12 m7">
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="wild_in_the_blue-961005.jpg">
-                            <span class="card-title">Howling wolf is awesome</span>
-                        </div>
-                        <div class="card-content">
-                            <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-                        </div>
-                        <div class="card-action">
-                            <span>AVALIACAO: over 9000</span>
-                            <a href="#">comparativo</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </li>
-        <li>
-            <div class="collapsible-header"><i class="mdi-social-public"></i>MMO</div>
-            <div class="collapsible-body">
-                <p>Lorem ipsum dolor sit amet.</p>
-            </div>
-        </li>
-        <li>
-            <div class="collapsible-header"><i class="mdi-image-colorize"></i>Shooter</div>
-            <div class="collapsible-body">
-                <p>Lorem ipsum dolor sit amet.</p>
-            </div>
-        </li>
-    </ul>
 
-
+    <!-- Category-->
+    <div class="row" ng-repeat="category in getCategories()">
+        <div class="col l3 m6 s12"  ng-repeat="item in getItemsByCategory(category)" >
+            {{ category }}
+            <div class="card z-depth-3">
+                <div class="card-image">
+                    <img ng-src="{{item.images[0]}}">
+                    <span class="card-title"></span>
+                </div>
+                <div class="card-content">
+                    <p>Category : {{ item.category }}</p>
+                    <p>{{ item.name }}</p>
+                    <p>{{ item.description }}</p>
+                    
+                </div>
+                <div class="card-action">
+                    <span>AVALIACAO: over 9000</span>
+                    <a href="#">comparativo</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
+
 
 <section class="col l3 m3 hide-on-small-only">
 
-    <div class="card">
+    <div class="card z-depth-3">
         <div class="card-image">
             <img src="wild_in_the_blue-961005.jpg">
             <span class="card-title">Howling wolf is awesome</span>

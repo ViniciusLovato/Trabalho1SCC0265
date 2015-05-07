@@ -12,17 +12,20 @@ angular.module('RankingApp').factory('userFactory', [function () {
             password: "123456"
         },
         {
-            email: "matheus@gmail.com",
-            name: "MATHEUS COMPRI",
-            birthday: "16/01/1991",
-            city: "ARARAQUARA",
+            email: "matheus@roleplay.com",
+            name: "MATHEUS 'da bagunca' COMPRI",
+            birthday: "29/02/1992",
+            city: "ZueiraLands",
             state: "SAO PAULO",
             phoneNumber: "99999-9999",
-            password: "compri"
+            password: "wasted"
         }
     ];
 
-    var loggedUser = {};
+    var loggedUser = {
+        name : 'Visitante',
+        email : ''
+    };
 
     return {
 
@@ -48,11 +51,15 @@ angular.module('RankingApp').factory('userFactory', [function () {
             
             return loggedUser;
         },
+        
+        logout: function(){
+            loggedUser = {};
+            loggedUser.name = 'Visitante';
+        },
 
         // get the current logged user
         getCurrentUser: function(){
             return loggedUser;
-            
         },
         
         // register user in the database

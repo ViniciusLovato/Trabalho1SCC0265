@@ -52,3 +52,7 @@ label[for=phone_number],label[for=email],label[for=birthday],label[for=state] {/
 #name, #city{/*capitalize name and city fields*/
     text-transform: uppercase;
 }
+
+nav .brand-logo {
+    font-size: 1.5rem;
+}

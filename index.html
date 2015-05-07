@@ -20,7 +20,7 @@
         <div class="container cabecalho">
             <div class="row">
                 <div class="col l8 m8 s12 valign-wrapper">
-                    <h1 class="valign"><a href="inicial.html" class="white-text">Logo da pagina</a></h1>
+                    <h1 class="valign"><a href="index.html" class="white-text">Logo da pagina</a></h1>
                 </div>
 
                 <div class="col l4 m4 s12 valign-wrapper">
@@ -38,21 +38,40 @@
             </div>
         </div>
 
+        <!-- Dropdown Structure -->
+        <ul id="dropdown1" class="dropdown-content">
+            <li><a href="#!">FPS</a>
+            </li>
+            <li><a href="#!">RPG</a>
+            </li>
+            <li><a href="#!">RTS</a>
+            </li>
+            <li><a href="#!">TBS</a>
+            </li>
+            <li><a href="#!">MMO</a>
+            </li>
+        </ul>
+
         <!-- Barra de navegacao principal-->
-        <nav class="grey darken-4">
+        <nav class="grey darken-4" ng-controller="indexCtrl">
             <div class="nav-wrapper">
-                <div class="container">
+                <div class="">
+                    <a href="#" class="brand-logo">Bem vindo(a) {{ user.name }}!</a>
+
                     <a href="#" data-activates="side-menu" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
                     <ul class="right hide-on-med-and-down">
                         <li><a href="#/">Home</a>
                         </li>
                         <li><a href="#/news">Destaques</a>
                         </li>
-                        <li><a href="#/categories">Categorias</a>
+                        <!-- Dropdown Trigger -->
+                        <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Categorias<i class="mdi-navigation-arrow-drop-down right"></i></a>
                         </li>
-                        <li><a href="#/userRegister">Cadastro</a>
+                        <li ng-hide="thereIsUserLoggedIn()"><a href="#/userRegister">Cadastro</a>
                         </li>
-                        <li><a href="#/login">Login</a>
+                        <li ng-show="!thereIsUserLoggedIn()"><a href="#/login">Login</a>
+                        </li>
+                        <li ng-show="thereIsUserLoggedIn()"><a ng-click="logout()" href="#/login">Sair</a>
                         </li>
                     </ul>
 
@@ -62,7 +81,15 @@
                         </li>
                         <li><a href="#/news">Destaques</a>
                         </li>
-                        <li><a href="#/categories">Categorias</a>
+                        <li><a href="#!">FPS</a>
+                        </li>
+                        <li><a href="#!">RPG</a>
+                        </li>
+                        <li><a href="#!">RTS</a>
+                        </li>
+                        <li><a href="#!">TBS</a>
+                        </li>
+                        <li><a href="#!">MMO</a>
                         </li>
                         <li><a href="#/userRegister">Cadastro</a>
                         </li>
@@ -75,8 +102,8 @@
         </nav>
     </header>
 
-    <section class="main row orange lighten-1">
-        <div ng-view></div>
+    <section class="main row grey lighten-2">
+        <div class="" ng-view></div>
     </section>
 
     <!-- Rodape da pagina -->
@@ -110,10 +137,9 @@
         </div>
     </footer>
 
-
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="assets/libs/jquery/jquery-2.1.3.min.js"></script>
-	
+
     <!--materializecss javascript file-->
     <script type="text/javascript" src="assets/libs/materialize/materialize.min.js"></script>
     <script type="text/javascript" src="assets/js/script.js"></script>
@@ -134,10 +160,10 @@
     <script type="text/javascript" src="app/components/itemRegister/itemRegisterController.js"></script>
     <script type="text/javascript" src="app/components/login/loginController.js"></script>
     <script type="text/javascript" src="app/components/userRegister/userRegisterController.js"></script>
-    
+
     <!-- Factory -->
     <script type="text/javascript" src="app/factories/userFactory.js"></script>
-
+    <script type="text/javascript" src="app/factories/itemFactory.js"></script>
 
 </body>
 
