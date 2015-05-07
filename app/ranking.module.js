@@ -9,7 +9,8 @@ angular.module('RankingApp', [
     'LoginApp',
     'UserRegisterApp',
     'ItemRegisterApp',
-    'ngRoute'
+    'ngRoute',
+	'ui.utils'
   ]);
 
 

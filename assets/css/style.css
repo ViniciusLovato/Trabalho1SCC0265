@@ -27,10 +27,28 @@ input.ng-invalid.ng-touched:focus:not([readonly]), input.ng-invalid.ng-touched{
 	box-shadow: 0px 1px 0px 0px #F44336;
 }
 
-input.ng-invalid.ng-touched:focus:not([readonly]) + label {
+input.ng-invalid.ng-touched:focus:not([readonly]) ~ label {
 	color: #EC7373;
 }
 
-input.ng-invalid.ng-touched + label {
+div .datepicker, div .select-dropdown {
+	border-bottom: 1px solid #4CAF50;
+	box-shadow: 0px 1px 0px 0px #4CAF50;
+}
+
+input.ng-invalid.ng-touched ~ label {
 	color: #EC7373;
+}
+
+.material-tooltip span {/*make materialize tooltip accept newline*/
+	white-space: pre-wrap;
+}
+
+label[for=phone_number],label[for=email],label[for=birthday],label[for=state] {/*fix placeholder issue*/
+    font-size: 0.8rem;
+    transform: translateY(-140%);
+}
+
+#name, #city{/*capitalize name and city fields*/
+    text-transform: uppercase;
 }
