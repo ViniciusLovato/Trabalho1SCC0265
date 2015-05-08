@@ -1,16 +1,10 @@
-angular.module('HomeApp', []);
-angular.module('LoginApp', []);
-angular.module('UserRegisterApp', []);
-angular.module('ItemRegisterApp', []);
+angular.module('RankingApp', ['ngRoute']);
 
 angular.module('RankingApp', [
-    'HomeApp',
-    'LoginApp',
-    'UserRegisterApp',
-    'ItemRegisterApp',
     'ngRoute',
 	'ui.utils'
   ]);
+
 
 angular.module('RankingApp').controller('indexCtrl', function ($scope, userFactory) {
     $scope.user = userFactory.getCurrentUser();

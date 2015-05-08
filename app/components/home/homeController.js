@@ -1,4 +1,4 @@
-angular.module('HomeApp').controller('HomeCtrl', function ($scope, itemFactory) {
+angular.module('RankingApp').controller('HomeCtrl', function ($scope, itemFactory) {
 
     $scope.getCategories = function(){
         return itemFactory.getCategories();

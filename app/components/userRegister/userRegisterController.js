@@ -1,5 +1,5 @@
 // app/modules/patient/controllers.js
-angular.module('UserRegisterApp').controller('UserRegisterCtrl', function ($scope, userFactory) {
+angular.module('RankingApp').controller('UserRegisterCtrl', function ($scope, userFactory) {
     $scope.$on("$viewContentLoaded", function() {
 		$('select').material_select();//necessary for materialize dropdown
 		$('.tooltipped').tooltip({delay: 50});//necessary for materialize tooltip
@@ -22,7 +22,6 @@ angular.module('UserRegisterApp').controller('UserRegisterCtrl', function ($scop
 	});
 	
 	$scope.userRegister={state:"AC"};
-	
     $scope.registerUser = function () {
         //If any of the fields are not filled, then set dirty to show the errors
         angular.forEach($scope.form.$error.required, function (field) {
@@ -38,8 +37,8 @@ angular.module('UserRegisterApp').controller('UserRegisterCtrl', function ($scop
 			
 		}
 		
-		/*debug
-		else {
+		//debug
+		/*else {
 			for (i = 0, len = $scope.form.$error.required.length; i < len; i++) {
 				console.log($scope.form.$error.required[i]);
 			}
@@ -49,6 +48,4 @@ angular.module('UserRegisterApp').controller('UserRegisterCtrl', function ($scop
 			console.log(userFactory.getUsers[i]);
 		}*/
     }
-	
-	
 });
