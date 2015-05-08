@@ -7,10 +7,10 @@ body {
     height: 15vh;
 }
 
-section.row, footer.page-footer {
+section.row,
+footer.page-footer {
     margin: 0;
 }
-
 
 .main {
     padding-top: 20px;
@@ -21,20 +21,40 @@ section.row, footer.page-footer {
     border-radius: 5px;
 }
 
-
-input.ng-invalid.ng-touched:focus:not([readonly]), input.ng-invalid.ng-touched{
-	border-bottom: 1px solid #F44336;
-	box-shadow: 0px 1px 0px 0px #F44336;
+input.ng-invalid.ng-touched:focus:not([readonly]),
+input.ng-invalid.ng-touched {
+    border-bottom: 1px solid #F44336;
+    box-shadow: 0px 1px 0px 0px #F44336;
 }
 
 input.ng-invalid.ng-touched:focus:not([readonly]) + label {
-	color: #EC7373;
+    color: #EC7373;
 }
 
 input.ng-invalid.ng-touched + label {
-	color: #EC7373;
+    color: #EC7373;
 }
 
 nav .brand-logo {
     font-size: 1.5rem;
+}
+
+.myContainer {
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.home-card {
+    height: 500px;
+}
+
+div.myCard {
+    height: auto;
+}
+
+div.home-card-content {
+    height: 200px;
+    overflow: scroll;
+
 }

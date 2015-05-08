@@ -1,9 +1,9 @@
 // configure the routes
 angular.module('RankingApp').config(function ($routeProvider) {
     $routeProvider
-    
+
     // route for the home page
-    .when('/', {
+        .when('/', {
         templateUrl: 'app/components/home/home.html',
         controller: 'HomeCtrl'
     })
@@ -23,7 +23,21 @@ angular.module('RankingApp').config(function ($routeProvider) {
     // route for the itemRegister page
     .when('/itemRegister', {
         templateUrl: 'app/components/itemRegister/itemRegister.html',
-        controller: 'ItemRegisterCtrl'
-    });
+        controller: 'ItemCtrl'
+    })
+
+    // route for the itemRegister page
+    .when('/item/:itemId', {
+            templateUrl: 'app/components/item/itemDetails.html',
+            controller: 'ItemCtrl'
+        })
+        // route for the itemRegister page
+    .when('/list/:category', {
+            templateUrl: 'app/components/item/itemByCategory.html',
+            controller: 'ItemCtrl'
+        })
+        .otherwise({
+            redirectTo: "/"
+        });
 
 });

@@ -1,10 +1,15 @@
-angular.module('LoginApp').controller('LoginCtrl', function ($scope, userFactory) {
+angular.module('RankingApp').controller('LoginCtrl', function ($scope, userFactory, $location) {
     // controller calls factory do log in user
     $scope.login = function (userName, userPassword) {
         var currentUser = userFactory.loginUser(userName, userPassword);
-       
-        $scope.userName = currentUser.name;
-        $scope.message  = currentUser.name + " "  + currentUser.email;
-            
+
+        if (currentUser.name !== 'Visitante') {
+            $scope.userName = currentUser.name;
+            $scope.message = currentUser.name + " " + currentUser.email;
+            $location.path("/");
+
+        }
+
+
     }
 });

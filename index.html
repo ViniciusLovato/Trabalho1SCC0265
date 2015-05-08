@@ -20,7 +20,7 @@
         <div class="container cabecalho">
             <div class="row">
                 <div class="col l8 m8 s12 valign-wrapper">
-                    <h1 class="valign"><a href="index.html" class="white-text">Logo da pagina</a></h1>
+                    <h1 class="valign"><a href="#/" class="white-text">Logo da pagina</a></h1>
                 </div>
 
                 <div class="col l4 m4 s12 valign-wrapper">
@@ -40,15 +40,15 @@
 
         <!-- Dropdown Structure -->
         <ul id="dropdown1" class="dropdown-content">
-            <li><a href="#!">FPS</a>
+            <li><a href="#/list/FPS">FPS</a>
             </li>
-            <li><a href="#!">RPG</a>
+            <li><a href="#/list/RPG">RPG</a>
             </li>
-            <li><a href="#!">RTS</a>
+            <li><a href="#/list/RTS">RTS</a>
             </li>
-            <li><a href="#!">TBS</a>
+            <li><a href="#/list/TBS">TBS</a>
             </li>
-            <li><a href="#!">MMO</a>
+            <li><a href="#/list/MMO">MMO</a>
             </li>
         </ul>
 
@@ -56,13 +56,11 @@
         <nav class="grey darken-4" ng-controller="indexCtrl">
             <div class="nav-wrapper">
                 <div class="">
-                    <a href="#" class="brand-logo">Bem vindo(a) {{ user.name }}!</a>
+                    <a href="#/" class="brand-logo">Bem vindo(a) {{ user.name }}!</a>
 
                     <a href="#" data-activates="side-menu" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
                     <ul class="right hide-on-med-and-down">
                         <li><a href="#/">Home</a>
-                        </li>
-                        <li><a href="#/news">Destaques</a>
                         </li>
                         <!-- Dropdown Trigger -->
                         <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Categorias<i class="mdi-navigation-arrow-drop-down right"></i></a>
@@ -79,17 +77,15 @@
                     <ul class="side-nav" id="side-menu">
                         <li><a href="#/">Home</a>
                         </li>
-                        <li><a href="#/news">Destaques</a>
+                        <li><a href="#/list/FPS">FPS</a>
                         </li>
-                        <li><a href="#!">FPS</a>
+                        <li><a href="#/list/RPG">RPG</a>
                         </li>
-                        <li><a href="#!">RPG</a>
+                        <li><a href="#/list/RTS">RTS</a>
                         </li>
-                        <li><a href="#!">RTS</a>
+                        <li><a href="#/list/TBS">TBS</a>
                         </li>
-                        <li><a href="#!">TBS</a>
-                        </li>
-                        <li><a href="#!">MMO</a>
+                        <li><a href="#/list/MMO">MMO</a>
                         </li>
                         <li><a href="#/userRegister">Cadastro</a>
                         </li>
@@ -103,7 +99,7 @@
     </header>
 
     <section class="main row grey lighten-2">
-        <div class="" ng-view></div>
+        <div class="myContainer " ng-view></div>
     </section>
 
     <!-- Rodape da pagina -->
@@ -129,10 +125,9 @@
                 </div>
             </div>
         </div>
-        <div class="footer-copyright grey darken-4">
+        <div class="footer-copyright black">
             <div class="container">
-
-                <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+                <a class="grey-text" href="#!">Desenvolvido por Marcus Silva e Vinicius Lovato</a>
             </div>
         </div>
     </footer>
@@ -154,7 +149,7 @@
 
     <!-- Importing Controllers -->
     <script type="text/javascript" src="app/components/home/homeController.js"></script>
-    <script type="text/javascript" src="app/components/itemRegister/itemRegisterController.js"></script>
+    <script type="text/javascript" src="app/components/item/itemController.js"></script>
     <script type="text/javascript" src="app/components/login/loginController.js"></script>
     <script type="text/javascript" src="app/components/userRegister/userRegisterController.js"></script>
 
