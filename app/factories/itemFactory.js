@@ -63,7 +63,7 @@ angular.module('RankingApp').factory('itemFactory', [function () {
                 },
                 {
                     userEmail: 'lovato@gmail.com',
-                    comment: "Unistaller is fast!"
+                    comment: "Uninstaller is fast!"
                 }
             ],
             category: ["SIM"],

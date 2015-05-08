@@ -1,19 +1,18 @@
 <section class="col l10 offset-l1 m8 offset-m2 s10 offset-s1 white z-depth-4" ng-app="UserRegisterApp">
     <form name="form" class="myForm" ng-submit="registerUser()" novalidate>
-        {{ userRegister.password }}
-        
+
         <div class="row">
             <div id="first-register-menu" class="col l6">
                 <h3 class="center-align">Novo usuário</h3>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input name="userRegisterName" id="name" type="text" class="validate" required ng-model="userRegister.name">
+                        <input name="userRegisterName" id="name" type="text" class="validate" required ng-model="userRegister.name" ng-pattern="/^[^\d]+$/">
                         <label for="name">Nome Completo</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input placeholder="example@emailprovider.com" name="userRegisterEmail" id="email" type="email" class="validate" required ng-model="userRegister.email">
+                        <input placeholder="example@emailprovider.com" name="userRegisterEmail" id="email" type="email" class="validate" data-position="bottom" data-delay="50" data-tooltip="email ja cadastrado" required ng-model="userRegister.email">
                         <label for="email">Email</label>
                     </div>
                 </div>
@@ -25,7 +24,7 @@
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input name="userConfirmPassword" ui-validate-watch=" 'userRegister.password' "  ui-validate=" '$value==userRegister.password' " id="confirm_password" type="password" class="validate" required ng-model="userRegister.confirmPassword">
+                        <input name="userConfirmPassword" ui-validate-watch=" 'userRegister.password' "  ui-validate=" '$value==userRegister.password' " id="confirm_password" type="password" class="validate" required ng-model="confirmPassword">
                         <label for="confirm_password">Confirmar Senha</label>
                     </div>
                 </div>
@@ -44,7 +43,7 @@
 				
                 <div class="row">
                     <div class="input-field col s12">
-                        <input name="userCity" id="city" type="text" class="validate" required ng-model="userRegister.city">
+                        <input name="userCity" id="city" type="text" class="validate" required ng-model="userRegister.city" ng-pattern="/^[^\d]+$/">
                         <label for="city">Cidade</label>
                     </div>
                 </div>
@@ -52,34 +51,34 @@
                 <div class="row">
                     <div class="input-field col s12">
 						<label for="state">Estado</label>
-						<select>
-						  	<option value="1">Acre 					(AC)</option>
-							<option value="2">Alagoas 				(AL)</option>
-							<option value="3">Amapá   				(AP)</option>
-							<option value="4">Amazonas				(AM)</option>
-							<option value="5">Bahia   				(BA)</option>
-							<option value="6">Ceará   				(CE)</option>
-							<option value="7">Distrito Federal 		(DF)</option>
-							<option value="8">Espírito Santo 		(ES)</option>
-							<option value="9">Goiás 				(GO)</option>
-							<option value="10">Maranhão 			(MA)</option>
-							<option value="11">Mato Grosso 			(MT)</option>
-							<option value="12">Mato Grosso do Sul 	(MS)</option>
-							<option value="13">Minas Gerais 		(MG)</option>
-							<option value="14">Pará 				(PA)</option>
-							<option value="15">Paraíba 				(PB)</option>
-							<option value="16">Paraná 				(PR)</option>
-							<option value="17">Pernambuco 			(PE)</option>
-							<option value="18">Piauí 				(PI)</option>
-							<option value="19">Rio de Janeiro 		(RJ)</option>
-							<option value="20">Rio Grande do Norte 	(RN)</option>
-							<option value="21">Rio Grande do Sul 	(RS)</option>
-							<option value="22">Rondônia 			(RO)</option>
-							<option value="23">Roraima 				(RR)</option>
-							<option value="24">Santa Catarina 		(SC)</option>
-							<option value="25">São Paulo 			(SP)</option>
-							<option value="26">Sergipe 				(SE)</option>
-							<option value="27">Tocantins 			(TO)</option>
+						<select ng-model="userRegister.state">
+						  	<option value="AC">Acre	(AC)</option>
+							<option value="AL">Alagoas	(AL)</option>
+							<option value="AP">Amapá	(AP)</option>
+							<option value="AM">Amazonas	(AM)</option>
+							<option value="BA">Bahia	(BA)</option>
+							<option value="CE">Ceará	(CE)</option>
+							<option value="DF">Distrito Federal	(DF)</option>
+							<option value="ES">Espírito Santo	(ES)</option>
+							<option value="GO">Goiás	(GO)</option>
+							<option value="MA">Maranhão	(MA)</option>
+							<option value="MT">Mato Grosso	(MT)</option>
+							<option value="MS">Mato Grosso do Sul	(MS)</option>
+							<option value="MG">Minas Gerais	(MG)</option>
+							<option value="PA">Pará	(PA)</option>
+							<option value="PB">Paraíba	(PB)</option>
+							<option value="PR">Paraná	(PR)</option>
+							<option value="PE">Pernambuco	(PE)</option>
+							<option value="PI">Piauí	(PI)</option>
+							<option value="RJ">Rio de Janeiro	(RJ)</option>
+							<option value="RN">Rio Grande do Norte	(RN)</option>
+							<option value="RS">Rio Grande do Sul	(RS)</option>
+							<option value="RO">Rondônia	(RO)</option>
+							<option value="RR">Roraima	(RR)</option>
+							<option value="SC">Santa Catarina	(SC)</option>
+							<option value="SP">São Paulo	(SP)</option>
+							<option value="SE">Sergipe	(SE)</option>
+							<option value="TO">Tocantins	(TO)</option>
 						</select>
                     </div>
                 </div>

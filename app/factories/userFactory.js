@@ -28,7 +28,7 @@ angular.module('RankingApp').factory('userFactory', [function () {
     };
 
     return {
-
+		getUsers:users,
         // Login function
         loginUser: function (email, password) {
             // filter the users searching for the "primary key"
@@ -63,17 +63,24 @@ angular.module('RankingApp').factory('userFactory', [function () {
         },
         
         // register user in the database
-        registerUser: function (user) {
-
-            var currentUser = users.filter(function (item) {
-                return item.email === email;
-            });
-
-            if (currentUser[0]) {
+        registerUser: function (user) {		
+			var canAddUser = function () {
+				for (length = users.length, i = 0; i < length; ++i)
+					if (user.email === users[i].email)
+						return false;
+				return true;
+			};
+			
+			
+            if (canAddUser() === false) {
                 console.log("Error, email already taken");
+				return false;
             } else {
-                users.push(user);
-
+				user.name = user.name.toUpperCase();
+				user.city = user.city.toUpperCase();
+				user.phoneNumber = "("+user.phoneNumber.slice(0, 2)+")"+user.phoneNumber.slice(2, 6)+"-"+user.phoneNumber.slice(6, 10);
+                users.push(angular.copy(user));
+				return true;
             }
         }
     }
