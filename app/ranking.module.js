@@ -1,5 +1,11 @@
 angular.module('RankingApp', ['ngRoute']);
 
+angular.module('RankingApp', [
+    'ngRoute',
+	'ui.utils'
+  ]);
+
+
 angular.module('RankingApp').controller('indexCtrl', function ($scope, userFactory) {
     $scope.user = userFactory.getCurrentUser();
 
