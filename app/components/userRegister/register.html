@@ -6,13 +6,13 @@
                 <h3 class="center-align">Novo usuário</h3>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input name="userRegisterName" id="name" type="text" class="validate" required ng-model="userRegister.name" ng-pattern="/^[^\d]+$/">
+                        <input name="userRegisterName" id="name" type="text" class="validate" required ng-model="userRegister.name">
                         <label for="name">Nome Completo</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input placeholder="example@emailprovider.com" name="userRegisterEmail" id="email" type="email" class="validate" data-position="bottom" data-delay="50" data-tooltip="email ja cadastrado" required ng-model="userRegister.email">
+                        <input placeholder="example@emailprovider.com" name="userRegisterEmail" id="email" type="email" class="validate tooltipped" data-position="bottom" data-delay="50" data-tooltip="email is already registered" hover-tooltip="false" required ng-model="userRegister.email">
                         <label for="email">Email</label>
                     </div>
                 </div>
@@ -43,7 +43,7 @@
 				
                 <div class="row">
                     <div class="input-field col s12">
-                        <input name="userCity" id="city" type="text" class="validate" required ng-model="userRegister.city" ng-pattern="/^[^\d]+$/">
+                        <input name="userCity" id="city" type="text" class="validate" required ng-model="userRegister.city">
                         <label for="city">Cidade</label>
                     </div>
                 </div>
