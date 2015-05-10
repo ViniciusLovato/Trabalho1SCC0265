@@ -12,7 +12,7 @@
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input placeholder="example@emailprovider.com" name="userRegisterEmail" id="email" type="email" class="validate tooltipped" data-position="bottom" data-delay="50" data-tooltip="email is already registered" hover-tooltip="false" required ng-model="userRegister.email">
+                        <input placeholder="example@emailprovider.com" name="userRegisterEmail" id="email" type="email" class="validate tooltipped" data-position="bottom" data-delay="50" data-tooltip="email ja registrado" hover-tooltip="false" required ng-model="userRegister.email">
                         <label for="email">Email</label>
                     </div>
                 </div>
@@ -24,7 +24,7 @@
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input name="userConfirmPassword" ui-validate-watch=" 'userRegister.password' "  ui-validate=" '$value==userRegister.password' " id="confirm_password" type="password" class="validate" required ng-model="confirmPassword">
+                        <input name="userConfirmPassword" ui-validate-watch=" 'userRegister.password' "  ui-validate=" '$value==userRegister.password' " id="confirm_password" type="password" class="validate tooltipped" data-position="bottom" data-delay="50" data-tooltip="Senhas devem ser identicas" hover-tooltip="false" required ng-model="confirmPassword">
                         <label for="confirm_password">Confirmar Senha</label>
                     </div>
                 </div>

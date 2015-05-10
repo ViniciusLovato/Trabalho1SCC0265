@@ -47,13 +47,13 @@ angular.module('RankingApp').controller('UserRegisterCtrl', function ($scope, us
 			
 		}
 		
-		//debug
 		else {
-			for (i = 0, len = $scope.form.$error.required.length; i < len; i++) {
-				console.log($scope.form.$error.required[i]);
+			if ($("#confirm_password").hasClass("ng-invalid")) {
+				$('#confirm_password.tooltipped').tooltip({delay: 50, id:'confirm_password_tooltip'});
 			}
 		}
 		
+		//debug
 		for (i = 0, len = userFactory.getUsers.length; i < len; i++) {
 			console.log(userFactory.getUsers[i]);
 		}
