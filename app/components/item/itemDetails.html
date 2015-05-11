@@ -1,64 +1,126 @@
 <section class="col l9 m9 s12">
     <!-- Category-->
     <div class="row">
+        <div class="col s12 ">
+            <h3 class=" cool-typography underline">{{ currentItem[0].name }} </h3>
+        </div>
+
         <div class="col l12 m12 s12">
-            <div class="card myCard z-depth-3">
+            <div class="card myCard z-depth-3 ">
                 <div class="card-image">
-                    <a href=""><img ng-src="{{ currentItem[0].images[0] }}">
+                    <a href=""><img ng-src="{{ currentItem[0].images[0] }}" />
                     </a>
                     <span class="card-title"></span>
                 </div>
-                <div class="card-content">
-                    <p>Category : {{ currentItem[0].category }}</p>
-                    <p>{{ currentItem[0].name }}</p>
-                    <p>{{ currentItem[0].description }}</p>
+                <div class="card-content ">
 
-                    <div ng-repeat="comment in currentItem[0].comments">
-                        <div class="card grey lighten-3 z-depth-1">
-                            <p>{{ comment.userEmail }}</p>
-                            <p>{{ comment.comment }}</p>
+                    <div class="card grey lighten-5 card-description ">
+
+                        <p class="orange-text border-bottom header">Descrição</p>
+                        <p class=""> {{ currentItem[0].description }} </p>
+                        <p class="">Categorias:
+
+                            <a href="" class="categoryTag" ng-repeat="itemCategory in currentItem[0].category" ng-click="go('/list/'+ itemCategory)">+{{ itemCategory }}
+                            </a>
+                        </p>
+
+
+                        <p class="author"> Catalogado por {{ currentItem[0].author }} </p>
+
+
+                        <p class="orange-text border-bottom header">Galeria de Imagens</p>
+                        <div class="row image-gallery">
+                            <div class="col s4">
+                                <div class="card">
+                                    <div class="card-image">
+                                        <a href="" ng-click="tog=1"><img ng-src="{{ currentItem[0].images[0] }}" />
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col s4">
+                                <div class="card">
+                                    <div class="card-image">
+                                        <a href="" ng-click="tog=2"><img ng-src="{{ currentItem[0].images[0] }}" />
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col s4">
+                                <div class="card">
+                                    <div class="card-image">
+                                        <a href="" ng-click="tog=3"><img ng-src="{{ currentItem[0].images[0] }}" />
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
+
+
+
+                        <p class="orange-text border-bottom header">Classificação dos usuários</p>
+                        <p> {{currentItem[0].rating.value}} </p>
+                        <p class="orange-text border-bottom header">Comentários</p>
+                        <p ng-hide="currentItem[0].comments[0]">Seja o primeiro a comentar!</p>
+                        <div ng-repeat="comment in currentItem[0].comments">
+                            <div class="card card-comment grey lighten-3 z-depth-1">
+                                <p>Usuario: {{ comment.userEmail }}</p>
+                                <p>{{ comment.comment }}</p>
+                            </div>
+                        </div>
                     </div>
+
                 </div>
                 <div class="card-action">
-                    <form>
-                        <p>Para comentar voce deve estar logado</p>
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <input ng-model="comment" id="comment" type="text" class="validate">
-                                <label for="comment">De sua opinião</label>
+                    <form name="commentForm">
+                        <div ng-show="isUser()">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input ng-model="comment" id="comment" type="text" class="validate" required/>
+                                    <label for="comment">De sua opinião</label>
+                                </div>
+                                <!--<div class="input-field col s12">
+                                    <input ng-model="ranking" id="rankgin" type="text" class="validate" required/>
+                                    <label for="ranking">Ranking</label>
+                                </div>-->
+                            </div>
+                            <div class="center-align">
+                                <button ng-click="postComment(currentItem[0].id, comment)" class="btn waves-effect waves-light" type="submit" name="action">Enviar comentário
+                                    <i class="mdi-content-send right"></i>
+                                </button>
                             </div>
                         </div>
                         <div class="center-align">
-                            <button ng-click="postComment(currentItem[0].id, comment)" class="btn waves-effect waves-light" type="submit" name="action">Enviar comentário
+                            <button ng-show="!isUser()" ng-click="go('/login/' + currentItem[0].id)" class="btn waves-effect waves-light" type="submit" name="action">Login para Enviar Comentário
                                 <i class="mdi-content-send right"></i>
                             </button>
                         </div>
                     </form>
-
-                    <span>AVALIACAO: over 9000</span>
-                    <a href="#">comparativo</a>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
-
 <section class="col l3 m3 hide-on-small-only">
-
-    <div class="card z-depth-3">
-        <div class="card-image">
-            <img src="">
-            <span class="card-title">Howling wolf is awesome</span>
+    <div class="row">
+        <div class="col s12">
+            <h3 class="underlineRelated cool-typography pink-text text-darken-1 right-align">&#9679;</h3>
         </div>
-        <div class="card-content">
-            <p>Propaganda</p>
-        </div>
-        <div class="card-action">
-            <span>AVALIACAO: over 9000</span>
-            <a href="#">comparativo</a>
+        <div class="col s12">
+            <div class="card z-depth-3">
+                <div class="card-image">
+                    <img src="">
+                    <span class="card-title">Howling wolf is awesome</span>
+                </div>
+                <div class="card-content">
+                    <p>Propaganda</p>
+                </div>
+                <div class="card-action">
+                    <span>AVALIACAO: over 9000</span>
+                    <a href="#">comparativo</a>
+                </div>
+            </div>
         </div>
     </div>
 </section>

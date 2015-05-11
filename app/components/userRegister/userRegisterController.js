@@ -1,6 +1,6 @@
 // app/modules/patient/controllers.js
 angular.module('RankingApp').controller('UserRegisterCtrl', function ($scope, userFactory) {
-    /*$scope.$on("$viewContentLoaded", function () {
+    $scope.$on("$viewContentLoaded", function () {
         $('select').material_select();
         $('.tooltipped').tooltip({
             delay: 50
@@ -35,5 +35,5 @@ angular.module('RankingApp').controller('UserRegisterCtrl', function ($scope, us
 
         console.log($scope.form.$valid);
 
-    }*/
+    }
 });

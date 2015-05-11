@@ -15,11 +15,11 @@ angular.module('RankingApp').config(function ($routeProvider) {
     })
 
     // route for the login page
-    .when('/login', {
+    .when('/login/:type', {
         templateUrl: 'app/components/login/login.html',
         controller: 'LoginCtrl'
     })
-
+    
     // route for the itemRegister page
     .when('/itemRegister', {
         templateUrl: 'app/components/itemRegister/itemRegister.html',

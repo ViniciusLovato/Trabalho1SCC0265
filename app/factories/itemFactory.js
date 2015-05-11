@@ -8,19 +8,27 @@ angular.module('RankingApp').factory('itemFactory', [function () {
             name: "Star Wars Battlefront",
             description: "Battlefield like Star Wars game",
             images: ["assets/img/battlefront.jpg"],
+            comments: [],
             category: ["FPS"],
             date: new Date(),
-            ranking: 5
+            rating: {
+                value: 5,
+                nVotes: 10
+            }
         },
         {
             id: 2,
             author: "VINICIUS LOVATO",
             name: "Mass Effect",
-            description: "A really competitive strategy game created by Blizzard",
+            description: "One of the very best games from BioWare",
             images: ["assets/img/masseffect1.jpg"],
+            comments: [],
             category: ["FPS", "RPG"],
             date: new Date(),
-            ranking: 5
+            rating: {
+                value: 5,
+                nVotes: 10
+            }
         },
         {
             id: 3,
@@ -31,7 +39,10 @@ angular.module('RankingApp').factory('itemFactory', [function () {
             comments: [],
             category: ["FPS"],
             date: new Date(),
-            ranking: 5
+            rating: {
+                value: 5,
+                nVotes: 10
+            }
         },
         {
             id: 4,
@@ -39,9 +50,13 @@ angular.module('RankingApp').factory('itemFactory', [function () {
             name: "Starcraft II",
             description: "A really competitive strategy game",
             images: ["assets/img/starcraft1.jpg"],
+            comments: [],
             category: ["RTS"],
             date: new Date(),
-            ranking: 5
+            rating: {
+                value: 5,
+                nVotes: 10
+            }
         },
         {
             id: 5,
@@ -61,7 +76,10 @@ angular.module('RankingApp').factory('itemFactory', [function () {
             ],
             category: ["RTS"],
             date: new Date(),
-            ranking: 5
+            rating: {
+                value: 5,
+                nVotes: 10
+            }
         },
         {
             id: 6,
@@ -72,7 +90,10 @@ angular.module('RankingApp').factory('itemFactory', [function () {
             comments: [],
             category: ["RTS"],
             date: new Date(),
-            ranking: 5
+            rating: {
+                value: 5,
+                nVotes: 10
+            }
         },
         {
             id: 7,
@@ -83,7 +104,10 @@ angular.module('RankingApp').factory('itemFactory', [function () {
             comments: [],
             category: ["RPG"],
             date: new Date(),
-            ranking: 5
+            rating: {
+                value: 5,
+                nVotes: 10
+            }
         },
         {
             id: 8,
@@ -99,7 +123,10 @@ angular.module('RankingApp').factory('itemFactory', [function () {
             ],
             category: ["RPG"],
             date: new Date(),
-            ranking: 5
+            rating: {
+                value: 5,
+                nVotes: 10
+            }
         },
         {
             id: 9,
@@ -110,7 +137,10 @@ angular.module('RankingApp').factory('itemFactory', [function () {
             comments: [],
             category: ["RPG"],
             date: new Date(),
-            ranking: 5
+            rating: {
+                value: 5,
+                nVotes: 10
+            }
         },
         {
             id: 10,
@@ -126,7 +156,10 @@ angular.module('RankingApp').factory('itemFactory', [function () {
             ],
             category: ["TBS"],
             date: new Date(),
-            ranking: 5
+            rating: {
+                value: 5,
+                nVotes: 10
+            }
         },
         {
             id: 11,
@@ -142,7 +175,10 @@ angular.module('RankingApp').factory('itemFactory', [function () {
             ],
             category: ["TBS"],
             date: new Date(),
-            ranking: 5
+            rating: {
+                value: 5,
+                nVotes: 10
+            }
         },
         {
             id: 12,
@@ -158,7 +194,10 @@ angular.module('RankingApp').factory('itemFactory', [function () {
             ],
             category: ["TBS"],
             date: new Date(),
-            ranking: 5
+            rating: {
+                value: 5,
+                nVotes: 10
+            }
         }
     ];
 
@@ -186,14 +225,20 @@ angular.module('RankingApp').factory('itemFactory', [function () {
         },
 
         addItemComment: function (id, comment, userEmail) {
-              
+            console.log(id);
+            console.log(comment);
+            console.log(userEmail);
+             
             var item = this.getItemById(id);
-            
+            console.log(item);
+            console.log(item[0]);
+            console.log(item[0].comments);
+
             var newComment = {
                 userEmail: userEmail,
                 comment: comment
-            }
-                   
+            };
+
             item[0].comments.push(newComment);
         },
 
