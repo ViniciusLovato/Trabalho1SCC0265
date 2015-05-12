@@ -1,0 +1,41 @@
+<section class="col l10 offset-l1 m8 offset-m2 s10 offset-s1 white z-depth-4" >
+	<form name="form" class="myForm"  ng-submit="registerGame()"novalidate>
+		<div class="row">
+			<div id="first-register-menu" class="col l6">
+				<h3 class="center-align">Cadastrar jogo</h3>
+				<div class="col s12">
+					<p for="name">Autor</p>
+					<label for="name">{{ user.name }}</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s12">
+					<input id="gamename" type="text" length="50" maxlength="50" class="validate" required ng-model="gameRegister.name">
+					<label for="gamename">Nome</label>
+				</div>
+				<div class="input-field col s12">
+					<textarea id="description" type="text" class="materialize-textarea validate" length="300" maxlength="300" required ng-model="gameRegister.description"></textarea>
+					<label for="description">Descrição</label>
+				</div>
+			</div>
+			<div class="gameimages">
+				<div class="file-field input-field">
+				  <input class="file-path validate" type="text"/>
+				  <div class="btn">
+					<span>File</span>
+					<input type="file" />
+				  </div>
+				</div>
+			</div>
+			<div class="row">
+                <div class="col s12">
+                    <div class="center-align">
+                        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                            <i class="mdi-content-send right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+		</div>
+	</form>
+</section>

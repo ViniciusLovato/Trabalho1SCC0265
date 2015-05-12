@@ -78,7 +78,6 @@ angular.module('RankingApp').factory('userFactory', [function () {
             } else {
 				user.name = user.name.toUpperCase();
 				user.city = user.city.toUpperCase();
-				//user.phoneNumber = "("+user.phoneNumber.slice(0, 2)+")"+user.phoneNumber.slice(2, 6)+"-"+user.phoneNumber.slice(6, 10);//bug esquisito ocorre se tentar cadastrar usuario com email ja cadastrado e logo em seguida cadastrar o usuario com um email ainda nao cadastrado. O numero de telefone eh armazenado de forma errada, e o campo de telefone fica eh apagado. Nao achei o motivo deste bug. Se esta linha for comentada nao corre nenhum problema, isto eh, se armazenar apenas o numero sem firulas.
                 users.push(angular.copy(user));
 				return true;
             }

@@ -13,6 +13,12 @@ angular.module('RankingApp').config(function ($routeProvider) {
         templateUrl: 'app/components/userRegister/register.html',
         controller: 'UserRegisterCtrl'
     })
+	
+	// route for the gameRegister page
+    .when('/gameRegister', {
+        templateUrl: 'app/components/gameRegister/register.html',
+        controller: 'GameRegisterCtrl'
+    })
 
     // route for the login page
     .when('/login', {
@@ -31,7 +37,8 @@ angular.module('RankingApp').config(function ($routeProvider) {
             templateUrl: 'app/components/item/itemDetails.html',
             controller: 'ItemCtrl'
         })
-        // route for the itemRegister page
+    
+	// route for the itemRegister page
     .when('/list/:category', {
             templateUrl: 'app/components/item/itemByCategory.html',
             controller: 'ItemCtrl'

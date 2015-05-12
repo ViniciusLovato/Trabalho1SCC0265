@@ -39,6 +39,7 @@ angular.module('RankingApp').controller('UserRegisterCtrl', function ($scope, us
 		if ($("#email").hasClass("ng-valid-email") && $("#name").hasClass("ng-valid") && $("#password").hasClass("ng-valid") && $("#confirm_password").hasClass("ng-valid") && $("#city").hasClass("ng-valid") && $("#phone_number").hasClass("ng-valid")) {
 			if (userFactory.registerUser($scope.userRegister)==false){//try to register user, and if email is already registered, execute code below
 				$("#email").addClass("ng-invalid");//make field become invalid
+				$( "#email" ).attr( "data-tooltip", "email ja registrado" );
 				$('#email.tooltipped').tooltip({delay: 50, id:'email_tooltip'});
 			}
 			else {
@@ -48,8 +49,21 @@ angular.module('RankingApp').controller('UserRegisterCtrl', function ($scope, us
 		}
 		
 		else {
+			if ($("#password").hasClass("ng-invalid")) {
+				$("#password").trigger('mouseenter');
+			}
+		
 			if ($("#confirm_password").hasClass("ng-invalid")) {
 				$('#confirm_password.tooltipped').tooltip({delay: 50, id:'confirm_password_tooltip'});
+			}
+			
+			if ($("#phone_number").hasClass("ng-invalid")) {
+				$('#phone_number.tooltipped').tooltip({delay: 50, id:'phone_number_tooltip'});
+			}
+			
+			if ($("#email").hasClass("ng-invalid")) {
+				$( "#email" ).attr( "data-tooltip", "email invalido" );
+				$('#email.tooltipped').tooltip({delay: 50, id:'email_tooltip'});
 			}
 		}
 		

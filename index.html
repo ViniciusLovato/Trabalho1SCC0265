@@ -51,7 +51,7 @@
             <li><a href="#/list/MMO">MMO</a>
             </li>
         </ul>
-
+		
         <!-- Barra de navegacao principal-->
         <nav class="grey darken-4" ng-controller="indexCtrl">
             <div class="nav-wrapper">
@@ -65,8 +65,10 @@
                         <!-- Dropdown Trigger -->
                         <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Categorias<i class="mdi-navigation-arrow-drop-down right"></i></a>
                         </li>
-                        <li ng-hide="thereIsUserLoggedIn()"><a href="#/userRegister">Cadastro</a>
+						<li ng-show="!thereIsUserLoggedIn()"><a href="#/userRegister">Cadastre-se</a>
                         </li>
+						<li ng-show="thereIsUserLoggedIn()"><a href="#/gameRegister">Cadastrar jogo</a>
+						</li>
                         <li ng-show="!thereIsUserLoggedIn()"><a href="#/login">Login</a>
                         </li>
                         <li ng-show="thereIsUserLoggedIn()"><a ng-click="logout()" href="#/login">Sair</a>
@@ -156,6 +158,7 @@
     <script type="text/javascript" src="app/components/item/itemController.js"></script>
     <script type="text/javascript" src="app/components/login/loginController.js"></script>
     <script type="text/javascript" src="app/components/userRegister/userRegisterController.js"></script>
+	<script type="text/javascript" src="app/components/gameRegister/gameRegisterController.js"></script>
 
     <!-- Factory -->
     <script type="text/javascript" src="app/factories/userFactory.js"></script>
