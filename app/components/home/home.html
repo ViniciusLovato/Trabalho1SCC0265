@@ -2,11 +2,13 @@
 
     <!-- Category-->
     <div class="row" ng-repeat="category in getCategories()">
+        <div class="col s12">
+            <h3 class="underline cool-typography">{{ catDictionary[category] }}</h3>
+        </div>
         <div class="col l3 m6 s12" ng-repeat="item in getItemsByCategory(category) | limitTo:4 | orderBy: 'date'">
-            {{ category }}
             <div class="card home-card z-depth-3">
                 <div class="card-image">
-                    <a href="#/item/{{ item.id}}"><img ng-src="{{item.images[0]}}">
+                    <a href="#/item/{{ item.id}}"><img ng-src="{{item.images[0]}}"/>
                     </a>
                     <span class="card-title"></span>
                 </div>
@@ -26,18 +28,24 @@
 
 
 <section class="col l2 m3 hide-on-small-only">
-
-    <div class="card z-depth-3">
-        <div class="card-image">
-            <img src="">
-            <span class="card-title">Howling wolf is awesome</span>
+    <div class="row">
+        <div class="col s12">
+            <h3 class="underlineRelated cool-typography right-align" style="">&#9679;</h3>
         </div>
-        <div class="card-content">
-            <p>Propaganda</p>
-        </div>
-        <div class="card-action">
-            <span>AVALIACAO: over 9000</span>
-            <a href="#">comparativo</a>
+        <div class="col s12">
+            <div class="card z-depth-3">
+                <div class="card-image">
+                    <img src="">
+                    <span class="card-title">Howling wolf is awesome</span>
+                </div>
+                <div class="card-content">
+                    <p>Propaganda</p>
+                </div>
+                <div class="card-action">
+                    <span>AVALIACAO: over 9000</span>
+                    <a href="#">comparativo</a>
+                </div>
+            </div>
         </div>
     </div>
 </section>

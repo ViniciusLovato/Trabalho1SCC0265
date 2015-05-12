@@ -28,11 +28,13 @@ input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched:focus:not([readonly]
 }
 
 
-div .datepicker, div .select-dropdown {
-	border-bottom: 1px solid #4CAF50;
-	box-shadow: 0px 1px 0px 0px #4CAF50;
+div .datepicker,
+div .select-dropdown {
+    border-bottom: 1px solid #4CAF50;
+    box-shadow: 0px 1px 0px 0px #4CAF50;
 }
 
+<<<<<<< HEAD
 textarea.ng-invalid.ng-touched:focus:not([readonly]) ~ label , input.ng-invalid.ng-touched:focus:not([readonly]) ~ label {
 	color: #EC7373;
 }
@@ -41,21 +43,31 @@ textarea.ng-invalid.ng-touched  ~ label, input.ng-invalid.ng-touched ~ label {
 	color: #EC7373;
 }
 
-.material-tooltip span {/*make materialize tooltip accept newline*/
-	white-space: pre-wrap;
+.material-tooltip span {
+    /*make materialize tooltip accept newline*/
+    
+    white-space: pre-wrap;
 }
 
-label[for=phone_number],label[for=email],label[for=birthday],label[for=state] {/*fix placeholder issue*/
+label[for=phone_number],
+label[for=email],
+label[for=birthday],
+label[for=state] {
+    /*fix placeholder issue*/
+    
     font-size: 0.8rem;
     transform: translateY(-140%);
 }
 
-#name, #city{/*capitalize name and city fields*/
+#name,
+#city {
+    /*capitalize name and city fields*/
+    
     text-transform: uppercase;
 }
 
 nav .brand-logo {
-    font-size: 1.5rem;
+    font-size: 1.5em;
 }
 
 .myContainer {
@@ -75,5 +87,58 @@ div.myCard {
 div.home-card-content {
     height: 200px;
     overflow: scroll;
-
 }
+
+.cool-typography {
+    font-variant: small-caps;
+}
+
+.underline {
+    border-bottom: solid 3px #444444;
+}
+
+.underlineRelated {
+    color: #880E4F;
+    border-bottom: solid 3px #880E4F;
+}
+
+.categoryTag {
+    font-size: 13px;
+    font-weight: 100;
+    color: white;
+    background-color: rgb(60, 60, 100);
+    padding: 2px;
+    border-radius: 5px;
+    margin-left: 2px;
+}
+
+.card-comment {
+    padding: 10px;
+}
+
+.card-description {
+    padding: 10px;
+}
+
+.card-description p {
+    padding: 10px;
+}
+
+.card-description .header {
+    font-size: 15px;
+}
+
+.border-bottom {
+    border-bottom: 1px solid;
+}
+
+.image-gallery {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.author {
+    font-size: 12px;
+}
+
+

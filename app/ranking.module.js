@@ -16,6 +16,7 @@ angular.module('RankingApp').controller('indexCtrl', function ($scope, userFacto
         return true;
     }
     
+    
     $scope.logout = function (){
         userFactory.logout();
         // check this
