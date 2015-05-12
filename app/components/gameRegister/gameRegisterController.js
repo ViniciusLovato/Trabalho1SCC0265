@@ -15,7 +15,7 @@ angular.module('RankingApp').controller('GameRegisterCtrl', function ($scope, us
 			  parent.find('input[type="file"]').change(function () {
 				  path_input.val($(this)[0].files[0].name);
 				  if (parent.is(':last-child')) {
-					$(".gameimages").append("<div class='file-field input-field'><input class='file-path validate' type='text'/><div class='btn'><span>File</span><input type='file'/></div></div>");
+					$(".gameimages").append("<div class='file-field input-field'><input class='file-path' type='text' disabled/><div class='btn'><span>File</span><input type='file'/></div></div>");
 					iterate_images();
 				  }
 			  });

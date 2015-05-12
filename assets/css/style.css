@@ -21,8 +21,8 @@ footer.page-footer {
     border-radius: 5px;
 }
 
-input.ng-invalid.ng-touched:focus:not([readonly]),
-input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched:focus:not([readonly]), textarea.ng-invalid.ng-touched{
+input.ng-invalid.ng-touched:focus:not([readonly]), textarea.ng-invalid.ng-touched:focus:not([readonly]),
+input.ng-invalid.ng-touched,  textarea.ng-invalid.ng-touched{
     border-bottom: 1px solid #F44336;
     box-shadow: 0px 1px 0px 0px #F44336;
 }
@@ -34,12 +34,11 @@ div .select-dropdown {
     box-shadow: 0px 1px 0px 0px #4CAF50;
 }
 
-<<<<<<< HEAD
-textarea.ng-invalid.ng-touched:focus:not([readonly]) ~ label , input.ng-invalid.ng-touched:focus:not([readonly]) ~ label {
+textarea.ng-invalid.ng-touched  ~ label, input.ng-invalid.ng-touched ~ label {
 	color: #EC7373;
 }
 
-textarea.ng-invalid.ng-touched  ~ label, input.ng-invalid.ng-touched ~ label {
+textarea.ng-invalid.ng-touched:focus:not([readonly]) ~ label , input.ng-invalid.ng-touched:focus:not([readonly]) ~ label {
 	color: #EC7373;
 }
 
