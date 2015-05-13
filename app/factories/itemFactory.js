@@ -207,7 +207,7 @@ angular.module('RankingApp').factory('itemFactory', [function () {
     return {
         registerItem: function (item) {
             item.id = items[items.length - 1].id + 1;
-            items.push(item);
+            items.push(angular.copy(item));
         },
 
         getItemList: function (category) {

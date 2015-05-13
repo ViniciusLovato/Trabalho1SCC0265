@@ -1,17 +1,24 @@
-angular.module('RankingApp').controller('GameRegisterCtrl', function ($scope, userFactory) {
+angular.module('RankingApp').controller('GameRegisterCtrl', function ($scope, userFactory, itemFactory) {
 	$scope.user = userFactory.getCurrentUser();
 	$scope.gameRegister = {rating : "adult"};
 	$scope.gameRegister.images = [];
 	$scope.gameRegister.extrafields = [];
 	$scope.gameRegister.languages = {
        english 				 : true,
-       french  				 : true,
-	   brazilian_portuguese  : true
+       french  				 : false,
+	   brazilian_portuguese  : false
+     };
+	 $scope.gameRegister.categories = {
+       FPS 				 	: false,
+       RPG  				: false,
+	   RTS  				: false,
+	   TBS  				: false,
+	   MMO  				: false
      };
 	var numbernewfields = 0;
 	$scope.$on("$viewContentLoaded", function() {
 		$('select').material_select(); //necessary for materialize dropdown
-		$('input, textarea').characterCounter();
+		$('input, textarea').characterCounter();//necessary for materialize character counter
 		
 		var date = new Date();
         var day = date.getDate();
@@ -98,6 +105,18 @@ angular.module('RankingApp').controller('GameRegisterCtrl', function ($scope, us
             field.$setTouched();
         });
 		
+		var atleastonecategoryischecked = true;
+		if ($scope.gameRegister.categories.FPS === false && $scope.gameRegister.categories.RPG === false && $scope.gameRegister.categories.RTS === false && $scope.gameRegister.categories.TBS === false && $scope.gameRegister.categories.MMO === false) {
+			atleastonecategoryischecked = false;
+			$('#categoriestooltip').tooltip({delay: 50, id:'categories_tooltip'});
+		}
+		
+		var atleastonelanguageischecked = true;
+		if ($scope.gameRegister.languages.english === false && $scope.gameRegister.languages.french === false && $scope.gameRegister.languages.brazilian_portuguese === false) {
+			atleastonelanguageischecked = false;
+			$('#languagestooltip').tooltip({delay: 50, id:'languages_tooltip'});
+		}
+		
 		/*make sure all uploaded files are images*/
 		var allfilesareimages = true;
 		var filefields = $('.gameimages .file-field');
@@ -111,7 +130,7 @@ angular.module('RankingApp').controller('GameRegisterCtrl', function ($scope, us
 			}
 		}
 		
-		/*make sure there is at least one image is uploaded*/
+		/*make sure there is at least one image uploaded*/
 		var firstimg = $('.gameimages .file-field').first().find('input.file-path');
 		if (firstimg.val() === "") {//there has to be at least one image uploaded
 			$(firstimg).attr( "data-tooltip", "Pelo menos uma imagem é necessária" );
@@ -139,7 +158,7 @@ angular.module('RankingApp').controller('GameRegisterCtrl', function ($scope, us
 		}
 		
 		/*if everything is valid, then store all images and register game*/
-		if ($("#gamename").hasClass("ng-valid") && $("#developer").hasClass("ng-valid") && $("#publisher").hasClass("ng-valid") && $("#description").hasClass("ng-valid") && allfilesareimages && firstimg.val() !== "" && allnewfieldsarefilledin) {	
+		if ($("#gamename").hasClass("ng-valid") && $("#developer").hasClass("ng-valid") && $("#publisher").hasClass("ng-valid") && $("#description").hasClass("ng-valid") && allfilesareimages && firstimg.val() !== "" && allnewfieldsarefilledin && atleastonecategoryischecked && atleastonelanguageischecked) {	
 			$('.gameimages .file-field').each(function() {
 				var parent =  $(this);
 				input = parent.find('input[type="file"]')
@@ -163,6 +182,9 @@ angular.module('RankingApp').controller('GameRegisterCtrl', function ($scope, us
 					$scope.gameRegister.extrafields.push({newfieldname:newfieldname,newfieldcontent:$(inputnewfield[0]).val()});
 				}
 			}
+			
+			itemFactory.registerItem($scope.gameRegister);//register game
+			
 	   }
 		
 		else {

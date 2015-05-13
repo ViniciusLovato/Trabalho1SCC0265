@@ -26,13 +26,26 @@
 					<label for="releasedate">Data de lançamento</label>
 				</div>
 				<div class="input-field col s12">
-				  <p>Idiomas</p>
-				  <input type="checkbox" id="english" checked="checked" ng-model="gameRegister.languages.english" />
+				  <p id="languagestooltip" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="selecione pelo menos um idioma" hover-tooltip="false">Idiomas</p>
+				  <input type="checkbox" id="english" ng-model="gameRegister.languages.english" />
 				  <label for="english">inglês</label>
-				  <input type="checkbox" id="french" checked="checked" ng-model="gameRegister.languages.french"/>
+				  <input type="checkbox" id="french" ng-model="gameRegister.languages.french"/>
 				  <label for="french">francês</label>
-				  <input type="checkbox" id="brazilian_portuguese" checked="checked" ng-model="gameRegister.languages.brazilian_portuguese"/>
+				  <input type="checkbox" id="brazilian_portuguese" ng-model="gameRegister.languages.brazilian_portuguese"/>
 				  <label for="brazilian_portuguese">português brasileiro</label>
+				</div>
+				<div class="input-field col s12">
+				  <p id="categoriestooltip" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="selecione pelo menos uma categoria" hover-tooltip="false">Categorias</p>
+				  <input type="checkbox" id="fps" ng-model="gameRegister.categories.FPS" />
+				  <label for="fps">FPS</label>
+				  <input type="checkbox" id="rpg" ng-model="gameRegister.categories.RPG"/>
+				  <label for="rpg">RPG</label>
+				  <input type="checkbox" id="rts" ng-model="gameRegister.categories.RTS"/>
+				  <label for="rts">RTS</label>
+				  <input type="checkbox" id="tbs" ng-model="gameRegister.categories.TBS"/>
+				  <label for="tbs">TBS</label>
+				  <input type="checkbox" id="mmo" ng-model="gameRegister.categories.MMO"/>
+				  <label for="mmo">MMO</label>
 				</div>
 				<div class="input-field col s12">
 					<select ng-model="gameRegister.rating">
