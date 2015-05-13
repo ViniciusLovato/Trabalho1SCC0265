@@ -56,6 +56,14 @@ angular.module('RankingApp').controller('UserRegisterCtrl', function ($scope, us
 		}
 		
 		else {
+			if ($("#name").hasClass("ng-invalid")) {
+				$("#name").tooltip({delay: 50, id:'name_tooltip'});
+			}
+			
+			if ($("#city").hasClass("ng-invalid")) {
+				$("#city").tooltip({delay: 50, id:'city_tooltip'});
+			}
+		
 			if ($("#password").hasClass("ng-invalid")) {
 				$("#password").trigger('mouseenter');
 			}

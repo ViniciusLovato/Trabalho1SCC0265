@@ -6,7 +6,7 @@
                 <h3 class="center-align">Novo usuário</h3>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input name="userRegisterName" id="name" type="text" class="validate" required ng-model="userRegister.name">
+                        <input name="userRegisterName" id="name" type="text" class="validate tooltipped" data-position="bottom" data-delay="50" data-tooltip="campo obrigatorio" hover-tooltip="false" required ng-model="userRegister.name">
                         <label for="name">Nome Completo</label>
                     </div>
                 </div>
@@ -36,14 +36,14 @@
 
                 <div class="row">
                     <div class="input-field col s12">
-						<input type="text" class="datepicker" required ng-model="userRegister.birthday"></input>
+						<input type="text" id="birthday" class="datepicker" required ng-model="userRegister.birthday"></input>
                         <label for="birthday">Data de Nascimento</label>
                     </div>
                 </div>
 				
                 <div class="row">
                     <div class="input-field col s12">
-                        <input name="userCity" id="city" type="text" class="validate" required ng-model="userRegister.city">
+                        <input name="userCity" id="city" type="text" class="validate tooltipped" data-position="bottom" data-delay="50" data-tooltip="campo obrigatorio" hover-tooltip="false" required ng-model="userRegister.city">
                         <label for="city">Cidade</label>
                     </div>
                 </div>

@@ -10,22 +10,63 @@
 			</div>
 			<div class="row">
 				<div class="input-field col s12">
-					<input id="gamename" type="text" length="50" maxlength="50" class="validate" required ng-model="gameRegister.name">
+					<input id="gamename" type="text" length="50" maxlength="50" class="validate tooltipped" data-position="bottom" data-delay="50" data-tooltip="campo obrigatorio" hover-tooltip="false" required ng-model="gameRegister.name">
 					<label for="gamename">Nome</label>
 				</div>
 				<div class="input-field col s12">
-					<textarea id="description" type="text" class="materialize-textarea validate" length="300" maxlength="300" required ng-model="gameRegister.description"></textarea>
+					<input id="developer" type="text" class="validate tooltipped" data-position="bottom" data-delay="50" data-tooltip="campo obrigatorio" hover-tooltip="false" required ng-model="gameRegister.developer"></input>
+					<label for="developer">Desenvolvedora</label>
+				</div>
+				<div class="input-field col s12">
+					<input id="publisher" type="text" class="validate tooltipped" data-position="bottom" data-delay="50" data-tooltip="campo obrigatorio" hover-tooltip="false" required ng-model="gameRegister.publisher"></input>
+					<label for="publisher">Distribuidora</label>
+				</div>
+				<div class="input-field col s12">
+					<input id="releasedate" type="text" class="datepicker" required ng-model="gameRegister.releasedate"></input>
+					<label for="releasedate">Data de lançamento</label>
+				</div>
+				<div class="input-field col s12">
+				  <p>Idiomas</p>
+				  <input type="checkbox" id="english" checked="checked" ng-model="gameRegister.languages.english" />
+				  <label for="english">inglês</label>
+				  <input type="checkbox" id="french" checked="checked" ng-model="gameRegister.languages.french"/>
+				  <label for="french">francês</label>
+				  <input type="checkbox" id="brazilian_portuguese" checked="checked" ng-model="gameRegister.languages.brazilian_portuguese"/>
+				  <label for="brazilian_portuguese">português brasileiro</label>
+				</div>
+				<div class="input-field col s12">
+					<select ng-model="gameRegister.rating">
+						<option value="adult">maiores de 18 anos</option>
+						<option value="teen">maiores de 13 anos</option>
+						<option value="early_childhood">primeira infância</option>
+						<option value="everyone">livre</option>
+					</select>
+					<label>Faixa etária</label>
+				</div>
+				<div class="input-field col s12">
+					<textarea id="description" type="text" class="materialize-textarea validate tooltipped" data-position="bottom" data-delay="50" data-tooltip="campo obrigatorio" hover-tooltip="false" length="300" maxlength="300" required ng-model="gameRegister.description"></textarea>
 					<label for="description">Descrição</label>
 				</div>
 			</div>
 			<div class="gameimages">
 				<div class="file-field input-field">
-				  <input class="file-path" type="text" disabled/>
+				  <input class="file-path tooltipped" data-position="bottom" data-delay="50" hover-tooltip="false" type="text" readonly/>
 				  <div class="btn">
-					<span>File</span>
+					<span>IMG</span>
 					<input type="file" />
 				  </div>
 				</div>
+			</div>
+			<div class="row">
+                <div class="col s12">
+                    <div class="center-align">
+                        <button class="btn waves-effect waves-light" type="button" name="action" id="addnewfield">Adicionar novo campo
+                            <i class="mdi-content-send right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+			<div id="newfields">
 			</div>
 			<div class="row">
                 <div class="col s12">
