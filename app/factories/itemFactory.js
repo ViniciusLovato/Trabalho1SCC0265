@@ -26,7 +26,7 @@ angular.module('RankingApp').factory('itemFactory', [function () {
             category: ["FPS", "RPG"],
             date: new Date(),
             rating: {
-                value: 5,
+                value: 6,
                 nVotes: 10
             }
         },
@@ -40,7 +40,7 @@ angular.module('RankingApp').factory('itemFactory', [function () {
             category: ["FPS"],
             date: new Date(),
             rating: {
-                value: 5,
+                value: 7,
                 nVotes: 10
             }
         },
@@ -54,7 +54,7 @@ angular.module('RankingApp').factory('itemFactory', [function () {
             category: ["RTS"],
             date: new Date(),
             rating: {
-                value: 5,
+                value: 8,
                 nVotes: 10
             }
         },
@@ -77,7 +77,7 @@ angular.module('RankingApp').factory('itemFactory', [function () {
             category: ["RTS"],
             date: new Date(),
             rating: {
-                value: 5,
+                value: 9,
                 nVotes: 10
             }
         },
@@ -91,7 +91,7 @@ angular.module('RankingApp').factory('itemFactory', [function () {
             category: ["RTS"],
             date: new Date(),
             rating: {
-                value: 5,
+                value: 10,
                 nVotes: 10
             }
         },
@@ -105,7 +105,7 @@ angular.module('RankingApp').factory('itemFactory', [function () {
             category: ["RPG"],
             date: new Date(),
             rating: {
-                value: 5,
+                value: 1,
                 nVotes: 10
             }
         },
@@ -124,7 +124,7 @@ angular.module('RankingApp').factory('itemFactory', [function () {
             category: ["RPG"],
             date: new Date(),
             rating: {
-                value: 5,
+                value: 2,
                 nVotes: 10
             }
         },
@@ -138,7 +138,7 @@ angular.module('RankingApp').factory('itemFactory', [function () {
             category: ["RPG"],
             date: new Date(),
             rating: {
-                value: 5,
+                value: 3,
                 nVotes: 10
             }
         },
@@ -157,7 +157,7 @@ angular.module('RankingApp').factory('itemFactory', [function () {
             category: ["TBS"],
             date: new Date(),
             rating: {
-                value: 5,
+                value: 4,
                 nVotes: 10
             }
         },
@@ -195,7 +195,7 @@ angular.module('RankingApp').factory('itemFactory', [function () {
             category: ["TBS"],
             date: new Date(),
             rating: {
-                value: 5,
+                value: 6,
                 nVotes: 10
             }
         }

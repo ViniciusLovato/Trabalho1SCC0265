@@ -45,6 +45,15 @@ angular.module('RankingApp').config(function ($routeProvider) {
         })
         .otherwise({
             redirectTo: "/"
+        })
+		
+	// route for the itemRegister page
+    .when('/graph/:category', {
+            templateUrl: 'app/components/gameGraph/gameGraph.html',
+            controller: 'gameGraphCtrl'
+        })
+        .otherwise({
+            redirectTo: "/"
         });
 
 });
