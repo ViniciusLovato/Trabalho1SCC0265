@@ -10,7 +10,6 @@ angular.module('RankingApp').controller('gameGraphCtrl', function ($scope, $rout
 			for (var i=0; i < length; ++i)
 				data.push([currentList[i].name, currentList[i].rating.value]);
 			
-			console.log($("#graph").height);
 			$.plot("#graph", [ data ], {
 				series: {
 					bars: {

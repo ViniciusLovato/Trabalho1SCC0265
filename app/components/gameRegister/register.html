@@ -1,5 +1,5 @@
 <section class="col l10 offset-l1 m8 offset-m2 s10 offset-s1 white z-depth-4" >
-	<form name="form" class="myForm"  ng-submit="registerGame()"novalidate>
+	<form name="form" class="myForm"  ng-submit="registerGame()" novalidate>
 		<div class="row">
 			<div id="first-register-menu" class="col l6">
 				<h3 class="center-align">Cadastrar jogo</h3>
@@ -36,15 +36,15 @@
 				</div>
 				<div class="input-field col s12">
 				  <p id="categoriestooltip" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="selecione pelo menos uma categoria" hover-tooltip="false">Categorias</p>
-				  <input type="checkbox" id="fps" ng-model="gameRegister.categories.FPS" />
+				  <input type="checkbox" id="fps" ng-model="categories.FPS" />
 				  <label for="fps">FPS</label>
-				  <input type="checkbox" id="rpg" ng-model="gameRegister.categories.RPG"/>
+				  <input type="checkbox" id="rpg" ng-model="categories.RPG"/>
 				  <label for="rpg">RPG</label>
-				  <input type="checkbox" id="rts" ng-model="gameRegister.categories.RTS"/>
+				  <input type="checkbox" id="rts" ng-model="categories.RTS"/>
 				  <label for="rts">RTS</label>
-				  <input type="checkbox" id="tbs" ng-model="gameRegister.categories.TBS"/>
+				  <input type="checkbox" id="tbs" ng-model="categories.TBS"/>
 				  <label for="tbs">TBS</label>
-				  <input type="checkbox" id="mmo" ng-model="gameRegister.categories.MMO"/>
+				  <input type="checkbox" id="mmo" ng-model="categories.MMO"/>
 				  <label for="mmo">MMO</label>
 				</div>
 				<div class="input-field col s12">

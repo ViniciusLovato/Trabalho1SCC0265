@@ -3,15 +3,19 @@
     <!-- Category-->
     <div class="row">
         <div class="col l6 m12 s12" ng-repeat="item in getItemsByCategory() | orderBy: 'date'">
-            {{ category }}
+
             <div class="card home-card z-depth-3">
                 <div class="card-image">
-                    <a href="#/item/{{ item.id}}"><img ng-src="{{item.images[0]}}"/>
+                    <a href="#/item/{{ item.id}}"><img ng-src="{{item.images[0]}}" />
                     </a>
                     <span class="card-title"></span>
                 </div>
                 <div class="card-content home-card-content ">
-                    <p>Category : {{ item.category }}</p>
+                    <span>Categories: </span>
+                    <span ng-repeat="cat in item.category">
+                       <a href=""><span class="categoryTag"> +{{ cat }}</span>
+                    </a>
+                    </span>
                     <p>{{ item.name }}</p>
                     <p>{{ item.description }}</p>
                 </div>

@@ -1,9 +1,10 @@
 <section class="col l10 offset-l1 m8 offset-m2 s10 offset-s1 white z-depth-4">
     <form name="form" class="myForm" ng-submit="registerUser()" novalidate>
 
+        <h3 class="center-align">Novo usuário</h3>
+
         <div class="row">
             <div id="first-register-menu" class="col l6">
-                <h3 class="center-align">Novo usuário</h3>
                 <div class="row">
                     <div class="input-field col s12">
                         <input name="userRegisterName" id="name" type="text" class="validate tooltipped" data-position="bottom" data-delay="50" data-tooltip="campo obrigatorio" hover-tooltip="false" required ng-model="userRegister.name">
@@ -12,19 +13,19 @@
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input placeholder="example@emailprovider.com" name="userRegisterEmail" id="email" type="email" class="validate tooltipped" data-position="bottom" data-delay="50" hover-tooltip="false" required ng-model="userRegister.email">
+                        <input placeholder="example@emailprovider.com" name="userRegisterEmail" id="email" type="email" class="validate tooltipped active" data-position="bottom" data-delay="50" hover-tooltip="false" required ng-model="userRegister.email">
                         <label for="email">Email</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
                         <input name="password" id="password" type="password" class="validate tooltipped" data-position="bottom" data-delay="50" data-tooltip="Senha deve conter no minimo:&#10;8 caracteres &#10;1 letra minuscula &#10;1 letra maiuscula &#10;1 numero &#10;1 caracter especial" required ng-model="userRegister.password" ng-pattern="/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\[\]\^\$\.\|\?\*\+\(\)\\~`\!@#%&\-_+={}'&quot;<>:;, ]).{8,}$/">
-						<label for="password">Nova Senha</label>
+                        <label for="password">Nova Senha</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input name="userConfirmPassword" ui-validate-watch=" 'userRegister.password' "  ui-validate=" '$value==userRegister.password' " id="confirm_password" type="password" class="validate tooltipped" data-position="bottom" data-delay="50" data-tooltip="Senhas devem ser identicas" hover-tooltip="false" required ng-model="confirmPassword">
+                        <input name="userConfirmPassword" ui-validate-watch=" 'userRegister.password' " ui-validate=" '$value==userRegister.password' " id="confirm_password" type="password" class="validate tooltipped" data-position="bottom" data-delay="50" data-tooltip="Senhas devem ser identicas" hover-tooltip="false" required ng-model="confirmPassword">
                         <label for="confirm_password">Confirmar Senha</label>
                     </div>
                 </div>
@@ -32,54 +33,53 @@
 
 
             <div id="second-register-menu" class="col l6">
-                <h3 class="center-align">Quase pronto!</h3>
 
                 <div class="row">
                     <div class="input-field col s12">
-						<input type="text" id="birthday" class="datepicker" required ng-model="userRegister.birthday"></input>
+                        <input type="text" id="birthday" class="datepicker" required ng-model="userRegister.birthday"></input>
                         <label for="birthday">Data de Nascimento</label>
                     </div>
                 </div>
-				
+
                 <div class="row">
                     <div class="input-field col s12">
                         <input name="userCity" id="city" type="text" class="validate tooltipped" data-position="bottom" data-delay="50" data-tooltip="campo obrigatorio" hover-tooltip="false" required ng-model="userRegister.city">
                         <label for="city">Cidade</label>
                     </div>
                 </div>
-				
+
                 <div class="row">
                     <div class="input-field col s12">
-						<label for="state">Estado</label>
-						<select ng-model="userRegister.state">
-						  	<option value="AC">Acre	(AC)</option>
-							<option value="AL">Alagoas	(AL)</option>
-							<option value="AP">Amapá	(AP)</option>
-							<option value="AM">Amazonas	(AM)</option>
-							<option value="BA">Bahia	(BA)</option>
-							<option value="CE">Ceará	(CE)</option>
-							<option value="DF">Distrito Federal	(DF)</option>
-							<option value="ES">Espírito Santo	(ES)</option>
-							<option value="GO">Goiás	(GO)</option>
-							<option value="MA">Maranhão	(MA)</option>
-							<option value="MT">Mato Grosso	(MT)</option>
-							<option value="MS">Mato Grosso do Sul	(MS)</option>
-							<option value="MG">Minas Gerais	(MG)</option>
-							<option value="PA">Pará	(PA)</option>
-							<option value="PB">Paraíba	(PB)</option>
-							<option value="PR">Paraná	(PR)</option>
-							<option value="PE">Pernambuco	(PE)</option>
-							<option value="PI">Piauí	(PI)</option>
-							<option value="RJ">Rio de Janeiro	(RJ)</option>
-							<option value="RN">Rio Grande do Norte	(RN)</option>
-							<option value="RS">Rio Grande do Sul	(RS)</option>
-							<option value="RO">Rondônia	(RO)</option>
-							<option value="RR">Roraima	(RR)</option>
-							<option value="SC">Santa Catarina	(SC)</option>
-							<option value="SP">São Paulo	(SP)</option>
-							<option value="SE">Sergipe	(SE)</option>
-							<option value="TO">Tocantins	(TO)</option>
-						</select>
+                        <label for="state">Estado</label>
+                        <select ng-model="userRegister.state">
+                            <option value="AC">Acre (AC)</option>
+                            <option value="AL">Alagoas (AL)</option>
+                            <option value="AP">Amapá (AP)</option>
+                            <option value="AM">Amazonas (AM)</option>
+                            <option value="BA">Bahia (BA)</option>
+                            <option value="CE">Ceará (CE)</option>
+                            <option value="DF">Distrito Federal (DF)</option>
+                            <option value="ES">Espírito Santo (ES)</option>
+                            <option value="GO">Goiás (GO)</option>
+                            <option value="MA">Maranhão (MA)</option>
+                            <option value="MT">Mato Grosso (MT)</option>
+                            <option value="MS">Mato Grosso do Sul (MS)</option>
+                            <option value="MG">Minas Gerais (MG)</option>
+                            <option value="PA">Pará (PA)</option>
+                            <option value="PB">Paraíba (PB)</option>
+                            <option value="PR">Paraná (PR)</option>
+                            <option value="PE">Pernambuco (PE)</option>
+                            <option value="PI">Piauí (PI)</option>
+                            <option value="RJ">Rio de Janeiro (RJ)</option>
+                            <option value="RN">Rio Grande do Norte (RN)</option>
+                            <option value="RS">Rio Grande do Sul (RS)</option>
+                            <option value="RO">Rondônia (RO)</option>
+                            <option value="RR">Roraima (RR)</option>
+                            <option value="SC">Santa Catarina (SC)</option>
+                            <option value="SP">São Paulo (SP)</option>
+                            <option value="SE">Sergipe (SE)</option>
+                            <option value="TO">Tocantins (TO)</option>
+                        </select>
                     </div>
                 </div>
 
@@ -90,7 +90,7 @@
                     </div>
                 </div>
             </div>
-			
+
             <div class="row">
                 <div class="col s12">
                     <div class="center-align">
