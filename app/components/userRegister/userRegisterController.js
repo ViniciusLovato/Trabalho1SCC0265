@@ -33,6 +33,10 @@ angular.module('RankingApp').controller('UserRegisterCtrl', function ($scope, us
             }
         });
     });
+	
+	$scope.$on("$destroy", function() {
+		$('.material-tooltip').remove();
+    });
 
     $scope.userRegister = {
         state: "AC"
@@ -53,6 +57,7 @@ angular.module('RankingApp').controller('UserRegisterCtrl', function ($scope, us
                     id: 'email_tooltip'
                 });
             } else {
+				console.log($scope.userRegister);
                 $("#email").removeClass("ng-invalid");
                 $location.path('/login/0');
             }

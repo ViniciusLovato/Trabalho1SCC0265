@@ -101,6 +101,10 @@ angular.module('RankingApp').controller('GameRegisterCtrl', function ($scope, us
         iterate_newfields();
 
     });
+	
+	$scope.$on("$destroy", function() {
+		$('.material-tooltip').remove();
+    });
 
     $scope.registerGame = function () {
         angular.forEach($scope.form.$error.required, function (field) {
