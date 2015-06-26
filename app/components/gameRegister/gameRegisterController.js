@@ -5,7 +5,7 @@ angular.module('RankingApp').controller('GameRegisterCtrl', function ($scope, us
     };
     $scope.gameRegister.images = [];
     $scope.gameRegister.extrafields = [];
-    $scope.gameRegister.languages = {
+    $scope.languages = {
         english: true,
         french: false,
         brazilian_portuguese: false
@@ -19,6 +19,8 @@ angular.module('RankingApp').controller('GameRegisterCtrl', function ($scope, us
     };
 
     $scope.gameRegister.category = [];
+	$scope.gameRegister.languages = [];
+	
     var numbernewfields = 0;
     $scope.$on("$viewContentLoaded", function () {
         $('select').material_select(); //necessary for materialize dropdown
@@ -101,6 +103,10 @@ angular.module('RankingApp').controller('GameRegisterCtrl', function ($scope, us
         iterate_newfields();
 
     });
+	
+	$scope.$on("$destroy", function() {
+		$('.material-tooltip').remove();
+    });
 
     $scope.registerGame = function () {
         angular.forEach($scope.form.$error.required, function (field) {
@@ -108,7 +114,7 @@ angular.module('RankingApp').controller('GameRegisterCtrl', function ($scope, us
         });
 
         var atleastonecategoryischecked = true;
-        if ($scope.categories.FPS === false && $scope.categories.RPG === false && $scope.categories.RTS === false && $scope.gameRegister.TBS === false && $scope.categories.MMO === false) {
+        if ($scope.categories.FPS === false && $scope.categories.RPG === false && $scope.categories.RTS === false && $scope.categories.TBS === false && $scope.categories.MMO === false) {
             atleastonecategoryischecked = false;
             $('#categoriestooltip').tooltip({
                 delay: 50,
@@ -117,7 +123,7 @@ angular.module('RankingApp').controller('GameRegisterCtrl', function ($scope, us
         }
 
         var atleastonelanguageischecked = true;
-        if ($scope.gameRegister.languages.english === false && $scope.gameRegister.languages.french === false && $scope.gameRegister.languages.brazilian_portuguese === false) {
+        if ($scope.languages.english === false && $scope.languages.french === false && $scope.languages.brazilian_portuguese === false) {
             atleastonelanguageischecked = false;
             $('#languagestooltip').tooltip({
                 delay: 50,
@@ -211,6 +217,16 @@ angular.module('RankingApp').controller('GameRegisterCtrl', function ($scope, us
                         }
                         if ($scope.categories.RPG) {
                             $scope.gameRegister.category.push("RPG");
+                        }
+						
+						if ($scope.languages.english) {
+                            $scope.gameRegister.languages.push("inglês");
+                        }
+                        if ($scope.languages.french) {
+                            $scope.gameRegister.languages.push("francês");
+                        }
+                        if ($scope.languages.brazilian_portuguese) {
+                            $scope.gameRegister.languages.push("português brasileiro");
                         }
 
                         itemFactory.registerItem($scope.gameRegister); //register game

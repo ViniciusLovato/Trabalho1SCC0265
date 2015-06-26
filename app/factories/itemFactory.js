@@ -10,6 +10,7 @@ angular.module('RankingApp').factory('itemFactory', [function () {
             images: ["assets/img/battlefront.jpg"],
             comments: [],
             category: ["FPS"],
+			languages: ["inglês"],
             date: new Date(),
             rating: {
                 value: 50,
@@ -24,6 +25,7 @@ angular.module('RankingApp').factory('itemFactory', [function () {
             images: ["assets/img/masseffect1.jpg"],
             comments: [],
             category: ["FPS", "RPG"],
+			languages: ["inglês"],
             date: new Date(),
             rating: {
                 value: 50,
@@ -38,6 +40,7 @@ angular.module('RankingApp').factory('itemFactory', [function () {
             images: ["assets/img/teamfortress1.jpg"],
             comments: [],
             category: ["FPS"],
+			languages: ["inglês"],
             date: new Date(),
             rating: {
                 value: 5,
@@ -52,6 +55,7 @@ angular.module('RankingApp').factory('itemFactory', [function () {
             images: ["assets/img/starcraft1.jpg"],
             comments: [],
             category: ["RTS"],
+			languages: ["inglês"],
             date: new Date(),
             rating: {
                 value: 50,
@@ -75,6 +79,7 @@ angular.module('RankingApp').factory('itemFactory', [function () {
                 }
             ],
             category: ["RTS"],
+			languages: ["inglês"],
             date: new Date(),
             rating: {
                 value: 50,
@@ -89,6 +94,7 @@ angular.module('RankingApp').factory('itemFactory', [function () {
             images: ["assets/img/coh1.jpg"],
             comments: [],
             category: ["RTS"],
+			languages: ["inglês"],
             date: new Date(),
             rating: {
                 value: 40,
@@ -103,6 +109,7 @@ angular.module('RankingApp').factory('itemFactory', [function () {
             images: ["assets/img/skyrim1.jpg"],
             comments: [],
             category: ["RPG"],
+			languages: ["inglês"],
             date: new Date(),
             rating: {
                 value: 40,
@@ -122,6 +129,7 @@ angular.module('RankingApp').factory('itemFactory', [function () {
                 }
             ],
             category: ["RPG"],
+			languages: ["inglês"],
             date: new Date(),
             rating: {
                 value: 40,
@@ -136,6 +144,7 @@ angular.module('RankingApp').factory('itemFactory', [function () {
             images: ["assets/img/thewitcher1.jpg"],
             comments: [],
             category: ["RPG"],
+			languages: ["inglês"],
             date: new Date(),
             rating: {
                 value: 50,
@@ -155,6 +164,7 @@ angular.module('RankingApp').factory('itemFactory', [function () {
                 }
             ],
             category: ["TBS"],
+			languages: ["inglês"],
             date: new Date(),
             rating: {
                 value: 50,
@@ -174,6 +184,7 @@ angular.module('RankingApp').factory('itemFactory', [function () {
                 }
             ],
             category: ["TBS"],
+			languages: ["inglês"],
             date: new Date(),
             rating: {
                 value: 50,
@@ -193,6 +204,7 @@ angular.module('RankingApp').factory('itemFactory', [function () {
                 }
             ],
             category: ["TBS"],
+			languages: ["inglês"],
             date: new Date(),
             rating: {
                 value: 40,
