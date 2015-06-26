@@ -24,8 +24,6 @@ angular.module('RankingApp').controller('gameGraphCtrl', function ($scope, $rout
 				}
 			});
 		});
-	
-	
 	});
 
 });

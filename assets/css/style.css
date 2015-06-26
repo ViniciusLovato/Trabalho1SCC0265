@@ -21,16 +21,20 @@ footer.page-footer {
     border-radius: 5px;
 }
 
-input.ng-invalid.ng-touched:focus, textarea.ng-invalid.ng-touched:focus,
-input.ng-invalid.ng-touched,  textarea.ng-invalid.ng-touched{
+input.ng-invalid.ng-touched:focus,
+textarea.ng-invalid.ng-touched:focus,
+input.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched {
     border-bottom: 1px solid #F44336;
     box-shadow: 0px 1px 0px 0px #F44336;
 }
 
-textarea.ng-invalid.ng-touched  ~ label, input.ng-invalid.ng-touched ~ label, textarea.ng-invalid.ng-touched:focus ~ label , input.ng-invalid.ng-touched:focus ~ label {
-	color: #EC7373;
+textarea.ng-invalid.ng-touched ~ label,
+input.ng-invalid.ng-touched ~ label,
+textarea.ng-invalid.ng-touched:focus ~ label,
+input.ng-invalid.ng-touched:focus ~ label {
+    color: #EC7373;
 }
-
 
 div .datepicker,
 div .select-dropdown {
@@ -136,4 +140,22 @@ div.home-card-content {
     font-size: 12px;
 }
 
-
+.rating {
+    color: #a9a9a9;
+    margin: 0;
+    padding: 0;
+}
+ul.rating {
+    display: inline-block;
+}
+.rating li {
+    list-style-type: none;
+    display: inline-block;
+    padding: 1px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+.rating .filled {
+    color: red;
+}

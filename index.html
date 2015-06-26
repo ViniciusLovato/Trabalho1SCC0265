@@ -10,6 +10,10 @@
     <link type="text/css" rel="stylesheet" href="assets/css/materialize/materialize.min.css" media="screen,projection" />
     <link type="text/css" rel="stylesheet" href="assets/css/style.css">
 
+    <!--Import Rating stars css-->
+
+
+
     <title>Inicial</title>
 </head>
 
@@ -51,8 +55,8 @@
             <li><a href="#/list/MMO">MMO</a>
             </li>
         </ul>
-		
-		<ul id="dropdown2" class="dropdown-content">
+
+        <ul id="dropdown2" class="dropdown-content">
             <li><a href="#/graph/FPS">FPS</a>
             </li>
             <li><a href="#/graph/RPG">RPG</a>
@@ -64,7 +68,7 @@
             <li><a href="#/graph/MMO">MMO</a>
             </li>
         </ul>
-		
+
         <!-- Barra de navegacao principal-->
         <nav class="grey darken-4" ng-controller="indexCtrl">
             <div class="nav-wrapper">
@@ -78,13 +82,13 @@
                         <!-- Dropdown Trigger -->
                         <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Categorias<i class="mdi-navigation-arrow-drop-down right"></i></a>
                         </li>
-						<!-- Graph -->
-						<li><a class="dropdown-button" href="#!" data-activates="dropdown2">Gráfico<i class="mdi-navigation-arrow-drop-down right"></i></a>
+                        <!-- Graph -->
+                        <li><a class="dropdown-button" href="#!" data-activates="dropdown2">Gráfico<i class="mdi-navigation-arrow-drop-down right"></i></a>
                         </li>
-						<li ng-show="!thereIsUserLoggedIn()"><a href="#/userRegister">Cadastre-se</a>
+                        <li ng-show="!thereIsUserLoggedIn()"><a href="#/userRegister">Cadastre-se</a>
                         </li>
-						<li ng-show="thereIsUserLoggedIn()"><a href="#/gameRegister">Cadastrar jogo</a>
-						</li>
+                        <li ng-show="thereIsUserLoggedIn()"><a href="#/gameRegister">Cadastrar jogo</a>
+                        </li>
                         <li ng-show="!thereIsUserLoggedIn()"><a href="#/login/0">Login</a>
                         </li>
                         <li ng-show="thereIsUserLoggedIn()"><a ng-click="logout()" href="#/login">Sair</a>
@@ -116,6 +120,7 @@
         </nav>
     </header>
 
+
     <section class="main row grey lighten-2">
         <div class="myContainer" ng-view autoscroll="true"></div>
     </section>
@@ -125,19 +130,19 @@
         <div class="container">
             <div class="row">
                 <div class="col l6 s12">
-                    <h5 class="white-text">Footer Content</h5>
-                    <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                    <h5 class="white-text">Site de Jogos</h5>
+                    <p class="grey-text text-lighten-4">Aqui você encontra todo o conteúdo relacionado ao mundo dos jogos</p>
                 </div>
                 <div class="col l4 offset-l2 s12">
-                    <h5 class="white-text">Links</h5>
+                    <h5 class="white-text">Categorias</h5>
                     <ul>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 1</a>
+                        <li><a class="grey-text text-lighten-3" href="#/list/FPS">FPS</a>
                         </li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 2</a>
+                        <li><a class="grey-text text-lighten-3" href="#/list/RTS">RTS</a>
                         </li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 3</a>
+                        <li><a class="grey-text text-lighten-3" href="#/list/TBS">TBS</a>
                         </li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 4</a>
+                        <li><a class="grey-text text-lighten-3" href="#/list/MMO">MMO</a>
                         </li>
                     </ul>
                 </div>
@@ -152,22 +157,30 @@
 
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="assets/libs/jquery/jquery-2.1.3.min.js"></script>
-	<!--Import jQuery graph plugin Flot-->
-	<script language="javascript" type="text/javascript" src="assets/libs/jquery/jquery.flot.min.js"></script>
-	<script language="javascript" type="text/javascript" src="assets/libs/jquery/jquery.flot.categories.min.js"></script>
-	
+
+    <!--Import jRating.js-->
+    <script type="text/javascript" src="assets/libs/raty/jquery.raty.js"></script>
+
+
+    <!--Import jQuery graph plugin Flot-->
+    <script language="javascript" type="text/javascript" src="assets/libs/jquery/jquery.flot.min.js"></script>
+    <script language="javascript" type="text/javascript" src="assets/libs/jquery/jquery.flot.categories.min.js"></script>
+
     <!--materializecss javascript file-->
     <script type="text/javascript" src="assets/libs/materialize/materialize.min.js"></script>
     <script type="text/javascript" src="assets/js/script.js"></script>
-	<script type="text/javascript" src="assets/js/script2.js"></script>
+    <script type="text/javascript" src="assets/js/script2.js"></script>
 
     <!-- AngularJS-->
     <script type="text/javascript" src="assets/libs/angularJS/angular.min.js"></script>
     <script type="text/javascript" src="assets/libs/angularJS/angular-route.min.js"></script>
-	
-	<!-- Importing Angular Utils -->
-	<script type="text/javascript" src="assets/libs/angular-utils/ui-utils.min.js"></script>
-	
+    
+    <!-- AngularJS Aria para acessibilidade-->
+    <script type="text/javascript" src="assets/libs/angularJS/angular-aria.min.js"></script>
+
+    <!-- Importing Angular Utils -->
+    <script type="text/javascript" src="assets/libs/angular-utils/ui-utils.min.js"></script>
+
     <!-- App and routes -->
     <script type="text/javascript" src="app/ranking.module.js"></script>
     <script type="text/javascript" src="app/ranking.routes.js"></script>
@@ -177,8 +190,8 @@
     <script type="text/javascript" src="app/components/item/itemController.js"></script>
     <script type="text/javascript" src="app/components/login/loginController.js"></script>
     <script type="text/javascript" src="app/components/userRegister/userRegisterController.js"></script>
-	<script type="text/javascript" src="app/components/gameRegister/gameRegisterController.js"></script>
-	<script type="text/javascript" src="app/components/gameGraph/gameGraphController.js"></script>
+    <script type="text/javascript" src="app/components/gameRegister/gameRegisterController.js"></script>
+    <script type="text/javascript" src="app/components/gameGraph/gameGraphController.js"></script>
 
     <!-- Factory -->
     <script type="text/javascript" src="app/factories/userFactory.js"></script>

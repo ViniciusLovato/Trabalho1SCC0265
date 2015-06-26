@@ -1,14 +1,14 @@
 <section class="col l9 m9 s12">
     <!-- Category-->
-    <div class="row">
+    <div class="row" itemscope itemtype="https://schema.org/Game">
         <div class="col s12 ">
-            <h3 class=" cool-typography underline">{{ currentItem[0].name }} </h3>
+            <h3 class=" cool-typography underline" itemproperty="name">{{ currentItem[0].name }} </h3>
         </div>
 
         <div class="col l12 m12 s12">
             <div class="card myCard z-depth-3 ">
                 <div class="card-image">
-                    <a href=""><img ng-src="{{ currentItem[0].images[0] }}" />
+                    <a href=""><img itemproperty="image" ng-src="{{ currentItem[0].images[0] }}" />
                     </a>
                     <span class="card-title"></span>
                 </div>
@@ -17,6 +17,7 @@
                     <div class="card grey lighten-5 card-description ">
 
                         <p class="orange-text border-bottom header">Descrição</p>
+
                         <p class=""> {{ currentItem[0].description }} </p>
                         <p class="">Categorias:
 
@@ -24,9 +25,7 @@
                             </a>
                         </p>
 
-
                         <p class="author"> Catalogado por {{ currentItem[0].author }} </p>
-
 
                         <p class="orange-text border-bottom header">Galeria de Imagens</p>
                         <div class="row image-gallery">
@@ -56,11 +55,20 @@
                             </div>
                         </div>
 
+                        <!-- <p class="orange-text border-bottom header">Classificação dos usuários:
+                                  <span star-rating rating-value="currentItem[0].rating.value" max="5"></span>
+                                  <span class="black-text"> ({{currentItem[0].rating.value}} estrelas em 5) </span>
+                        </p>-->
+                        Média dos votos: {{ getRate() }} <rating  id=" {{ currentItem[0].id }}" score="{{ getRate() }}" number="5" read-only></rating> 
 
 
-
-                        <p class="orange-text border-bottom header">Classificação dos usuários</p>
-                        <p> {{currentItem[0].rating.value}} </p>
+                        <div ng-show="isUser()">
+                            Voto so usuário: <rating  id=" {{ currentItem[0].id }}" score="{{ getRate() }}" number="5"></rating> 
+                        </div>
+                        
+                        <div ng-show="!isUser()">
+                            <span>Login para votar</span>
+                        </div>
                         <p class="orange-text border-bottom header">Comentários</p>
                         <p ng-hide="currentItem[0].comments[0]">Seja o primeiro a comentar!</p>
                         <div ng-repeat="comment in currentItem[0].comments">
@@ -80,6 +88,8 @@
                                     <input ng-model="comment" id="comment" type="text" class="validate" required/>
                                     <label for="comment">De sua opinião</label>
                                 </div>
+                                
+
                                 <!--<div class="input-field col s12">
                                     <input ng-model="ranking" id="rankgin" type="text" class="validate" required/>
                                     <label for="ranking">Ranking</label>
@@ -117,7 +127,6 @@
                     <p>Propaganda</p>
                 </div>
                 <div class="card-action">
-                    <span>AVALIACAO: over 9000</span>
                     <a href="#">comparativo</a>
                 </div>
             </div>

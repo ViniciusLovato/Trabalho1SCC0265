@@ -1,6 +1,7 @@
 <section class="col l10 m9 s12">
 
     <!-- Category-->
+
     <div class="row" ng-repeat="category in getCategories()">
         <div class="col s12">
             <h3 class="underline cool-typography">{{ catDictionary[category] }}</h3>
@@ -23,7 +24,8 @@
                     <p>{{ item.description }}</p>
                 </div>
                 <div class="card-action">
-                    <span>AVALIACAO: over 9000</span>
+                    <span class="orange-text">Avaliação: </span>
+                        <rating score="{{ getRate(item.id) }}" number="5" read-only></rating> 
                     <a href="#">comparativo</a>
                 </div>
             </div>
@@ -47,7 +49,6 @@
                     <p>Propaganda</p>
                 </div>
                 <div class="card-action">
-                    <span>AVALIACAO: over 9000</span>
                     <a href="#">comparativo</a>
                 </div>
             </div>

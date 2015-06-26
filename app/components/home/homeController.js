@@ -18,5 +18,9 @@ angular.module('RankingApp').controller('HomeCtrl', function ($scope, itemFactor
 
         $location.path(path);
     };
+    
+    $scope.getRate = function(id){
+        return itemFactory.getRating(id);
+    }
 
 });

@@ -5,4 +5,5 @@ $(document).ready(function () {
     // select materializecss function
     $('select').material_select();
 
+    // $('.star').raty({ path: 'assets/libs/raty/images' });
 });
