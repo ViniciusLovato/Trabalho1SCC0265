@@ -122,15 +122,21 @@
                                 </button>
                             </div>
                         </div>
-                        <div class="center-align">
+                        <div id="xmlContent" class="center-align">
                             <button ng-show="!isUser()" ng-click="go('/login/' + currentItem[0].id)" class="btn waves-effect waves-light" type="submit" name="action">Login para Enviar Comentário
                                 <i class="mdi-content-send right"></i>
                             </button>
 
-                            <button ng-click="getXML()" class="btn waves-effect waves-light" type="submit" name="action">XML!
+                           <br>                            
+                           <br>                            
+
+                            <button id="xmlButton" ng-click="getXML()" class="btn waves-effect waves-light" type="submit" name="action">XML!
                                 <i class="mdi-content-send right"></i>
                             </button>
-
+                            
+                            <br>
+                            <br>                            
+                            <!--<div id="xmlContent"></div>-->
                         </div>
                     </form>
                 </div>

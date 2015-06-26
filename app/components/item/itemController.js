@@ -62,8 +62,25 @@ angular.module('RankingApp').controller('ItemCtrl', function ($scope, $routePara
             "\t<faixa_etaria>" + $scope.currentItem[0].rating2 + "</faixa_etaria>\n" +
             "</jogo>";
 
-            $location.absUrl("/itemXML.html");
+        //var oParser = new DOMParser();
+        // var oDOM = oParser.parseFromString(xml, "text/xml");
 
-        console.log(xml);
+        // console.log("DOM" + oDOM.documentElement.nodeName == "parsererror" ? "error while parsing" : oDOM.documentElement.nodeName);
+        
+        var textArea = document.createElement('textarea');
+        textArea.setAttribute("rows", "100");
+        textArea.setAttribute("id", "xmlDownload");
+        textArea.setAttribute("readonly");
+        document.getElementById("xmlContent").appendChild(textArea);
+        
+        $("#xmlDownload").css("height", "250");
+        
+        document.getElementById("xmlDownload").innerHTML = xml;
+        
+        document.getElementById("xmlButton").disabled = true;
+        
+        // $location.absUrl("/itemXML.html");
+
+        // console.log("DOM" + oDOM);
     }
 });

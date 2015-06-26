@@ -281,7 +281,7 @@ angular.module('RankingApp').factory('itemFactory', [function () {
         getRating: function (id) {
 
             var item = this.getItemById(id);
-            console.log(item[0]);
+            // console.log(item[0]);
             return (item[0].rating.value / item[0].rating.nVotes);
         },
 
