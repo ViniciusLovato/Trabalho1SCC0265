@@ -1,18 +1,18 @@
 // app/modules/patient/controllers.js
 angular.module('RankingApp').controller('ItemCtrl', function ($scope, $routeParams, itemFactory, userFactory, $location) {
-    if($routeParams.category !== undefined){
+    if ($routeParams.category !== undefined) {
         $scope.groupCategory = $routeParams.category;
     }
-    
-    
+
+
     $scope.$on("$viewContentLoaded", function () {
 
         console.log("Param ID : " + $routeParams.itemId);
-        
+
         if ($routeParams.itemId !== undefined) {
             $scope.currentItem = itemFactory.getItemById($routeParams.itemId);
             $scope.currentList = itemFactory.getItemsByCategory($routeParams.category);
-            
+
             console.log("CurrentItem" + $scope.currentItem);
             $scope.rate = itemFactory.getRating($routeParams.itemId);
         }
@@ -48,4 +48,22 @@ angular.module('RankingApp').controller('ItemCtrl', function ($scope, $routePara
         $location.path(path);
     };
 
+    $scope.getXML = function () {
+
+        var xml;
+
+        xml = "<?xml version='1.0' encoding='UTF-8'?>\n" +
+            "<jogo>\n" +
+            "\t<nome>" + $scope.currentItem[0].name + "</nome>\n" +
+            "\t<descricao>" + $scope.currentItem[0].description + "</descricao>\n" +
+            "\t<desenvolvedor>" + $scope.currentItem[0].developer + "</desenvolvedor>\n" +
+            "\t<produtora>" + $scope.currentItem[0].publisher + "</produtora>\n" +
+            "\t<lancamento>" + $scope.currentItem[0].releasedate + "</lancamento>\n" +
+            "\t<faixa_etaria>" + $scope.currentItem[0].rating2 + "</faixa_etaria>\n" +
+            "</jogo>";
+
+            $location.absUrl("/itemXML.html");
+
+        console.log(xml);
+    }
 });
