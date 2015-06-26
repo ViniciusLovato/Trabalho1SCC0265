@@ -1,14 +1,14 @@
 <section class="col l9 m9 s12">
     <!-- Category-->
-    <div class="row" itemscope itemtype="https://schema.org/Game">
+    <div class="row" itemscope itemtype="https://schema.org/VideoGame">
         <div class="col s12 ">
-            <h3 class=" cool-typography underline" itemproperty="name">{{ currentItem[0].name }} </h3>
+            <h3 class=" cool-typography underline" itemprop="name">{{ currentItem[0].name }} </h3>
         </div>
 
         <div class="col l12 m12 s12">
             <div class="card myCard z-depth-3 ">
                 <div class="card-image">
-                    <a href=""><img itemproperty="image" ng-src="{{ currentItem[0].images[0] }}" />
+                    <a href=""><img itemprop="image" ng-src="{{ currentItem[0].images[0] }}" />
                     </a>
                     <span class="card-title"></span>
                 </div>
@@ -17,9 +17,28 @@
                     <div class="card grey lighten-5 card-description ">
 
                         <p class="orange-text border-bottom header">Descrição</p>
+                        <p class="" itemprop="description"> {{ currentItem[0].description }} </p>
 
-                        <p class=""> {{ currentItem[0].description }} </p>
-                        <p class="">Categorias:
+                        <p class="orange-text border-bottom header">Desenvolvedor</p>
+                        <div itemscope itemtype="http://schema.org/Organization">
+                            <p class="" itemprop="name"> {{ currentItem[0].developer }} </p>
+                        </div>
+
+                        <p class="orange-text border-bottom header">Produtora</p>
+                        <div itemscope itemtype="http://schema.org/Organization">
+                            <p class="" itemprop="name"> {{ currentItem[0].publisher }} </p>
+                        </div>
+
+                        <p class="orange-text border-bottom header">Date de lancamento</p>
+                        <p class="" itemprop="dateCreated"> {{ currentItem[0].releasedate }} </p>
+
+                        <p class="orange-text border-bottom header">Faixa Etária</p>
+                        <p class="" itemprop="contentRating"> {{ currentItem[0].rating2 }} </p>
+
+
+                        <p class="orange-text border-bottom header">Categorias</p>
+
+                        <p class="">TAGS:
 
                             <a href="" class="categoryTag" ng-repeat="itemCategory in currentItem[0].category" ng-click="go('/list/'+ itemCategory)">+{{ itemCategory }}
                             </a>
@@ -59,13 +78,15 @@
                                   <span star-rating rating-value="currentItem[0].rating.value" max="5"></span>
                                   <span class="black-text"> ({{currentItem[0].rating.value}} estrelas em 5) </span>
                         </p>-->
-                        Média dos votos: {{ getRate() }} <rating  id=" {{ currentItem[0].id }}" score="{{ getRate() }}" number="5" read-only></rating> 
+                        Média dos votos: {{ getRate() }}
+                        <rating id=" {{ currentItem[0].id }}" score="{{ getRate() }}" number="5" read-only></rating>
 
 
                         <div ng-show="isUser()">
-                            Voto so usuário: <rating  id=" {{ currentItem[0].id }}" score="{{ getRate() }}" number="5"></rating> 
+                            Voto so usuário:
+                            <rating id=" {{ currentItem[0].id }}" score="{{ getRate() }}" number="5"></rating>
                         </div>
-                        
+
                         <div ng-show="!isUser()">
                             <span>Login para votar</span>
                         </div>
@@ -88,7 +109,7 @@
                                     <input ng-model="comment" id="comment" type="text" class="validate" required/>
                                     <label for="comment">De sua opinião</label>
                                 </div>
-                                
+
 
                                 <!--<div class="input-field col s12">
                                     <input ng-model="ranking" id="rankgin" type="text" class="validate" required/>

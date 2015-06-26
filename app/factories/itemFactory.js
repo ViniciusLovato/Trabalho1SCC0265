@@ -10,11 +10,15 @@ angular.module('RankingApp').factory('itemFactory', [function () {
             images: ["assets/img/battlefront.jpg"],
             comments: [],
             category: ["FPS"],
-			languages: ["inglês"],
+            developer: "DICE",
+            publisher: "EA",
+            languages: ["inglês"],
             date: new Date(),
+            releasedate: new Date(),
+            rating2: "Everyone",
             rating: {
-                value: 50,
-                nVotes: 10
+                value: 0,
+                nVotes: 0
             }
         },
         {
@@ -24,9 +28,13 @@ angular.module('RankingApp').factory('itemFactory', [function () {
             description: "One of the very best games from BioWare",
             images: ["assets/img/masseffect1.jpg"],
             comments: [],
+            developer: "DICE",
+            publisher: "EA",
             category: ["FPS", "RPG"],
-			languages: ["inglês"],
+            languages: ["inglês"],
             date: new Date(),
+            releasedate: new Date(),
+            rating2: "Everyone",
             rating: {
                 value: 50,
                 nVotes: 10
@@ -39,9 +47,13 @@ angular.module('RankingApp').factory('itemFactory', [function () {
             description: "Insane cartoony first person shooter",
             images: ["assets/img/teamfortress1.jpg"],
             comments: [],
+            developer: "DICE",
+            publisher: "EA",
             category: ["FPS"],
-			languages: ["inglês"],
+            languages: ["inglês"],
             date: new Date(),
+            releasedate: new Date(),
+            rating2: "Everyone",
             rating: {
                 value: 5,
                 nVotes: 1
@@ -54,9 +66,13 @@ angular.module('RankingApp').factory('itemFactory', [function () {
             description: "A really competitive strategy game",
             images: ["assets/img/starcraft1.jpg"],
             comments: [],
+            developer: "DICE",
+            publisher: "EA",
             category: ["RTS"],
-			languages: ["inglês"],
+            languages: ["inglês"],
             date: new Date(),
+            releasedate: new Date(),
+            rating2: "Everyone",
             rating: {
                 value: 50,
                 nVotes: 10
@@ -78,9 +94,13 @@ angular.module('RankingApp').factory('itemFactory', [function () {
                     comment: "Good times playing the original game years ago!"
                 }
             ],
+            developer: "DICE",
+            publisher: "EA",
             category: ["RTS"],
-			languages: ["inglês"],
+            languages: ["inglês"],
             date: new Date(),
+            releasedate: new Date(),
+            rating2: "Everyone",
             rating: {
                 value: 50,
                 nVotes: 10
@@ -93,9 +113,13 @@ angular.module('RankingApp').factory('itemFactory', [function () {
             description: "A good world war strategy game, it uses real scenarios and campaign",
             images: ["assets/img/coh1.jpg"],
             comments: [],
+            developer: "DICE",
+            publisher: "EA",
             category: ["RTS"],
-			languages: ["inglês"],
+            languages: ["inglês"],
             date: new Date(),
+            releasedate: new Date(),
+            rating2: "Everyone",
             rating: {
                 value: 40,
                 nVotes: 10
@@ -108,9 +132,13 @@ angular.module('RankingApp').factory('itemFactory', [function () {
             description: "The latest elder scrolls, incredible fun and a vast open world to explore",
             images: ["assets/img/skyrim1.jpg"],
             comments: [],
+            developer: "DICE",
+            publisher: "EA",
             category: ["RPG"],
-			languages: ["inglês"],
+            languages: ["inglês"],
             date: new Date(),
+            releasedate: new Date(),
+            rating2: "Everyone",
             rating: {
                 value: 40,
                 nVotes: 10
@@ -128,9 +156,14 @@ angular.module('RankingApp').factory('itemFactory', [function () {
                     comment: '10/10. Best action RPG ever, until you die on hardcore and rage quit. And then come back a month later.',
                 }
             ],
+            developer: "DICE",
+            publisher: "EA",
             category: ["RPG"],
-			languages: ["inglês"],
+            languages: ["inglês"],
             date: new Date(),
+            releasedate: new Date(),
+            rating2: "Everyone",
+
             rating: {
                 value: 40,
                 nVotes: 10
@@ -144,8 +177,11 @@ angular.module('RankingApp').factory('itemFactory', [function () {
             images: ["assets/img/thewitcher1.jpg"],
             comments: [],
             category: ["RPG"],
-			languages: ["inglês"],
+            languages: ["inglês"],
             date: new Date(),
+            releasedate: new Date(),
+            rating2: "Everyone",
+
             rating: {
                 value: 50,
                 nVotes: 10
@@ -163,9 +199,14 @@ angular.module('RankingApp').factory('itemFactory', [function () {
                     comment: 'Nice turn-based strategy, not as polished as civ 5, but still a really nice and innovative game; the quest system to develop your civilization ir really nice.'
                 }
             ],
+            developer: "DICE",
+            publisher: "EA",
             category: ["TBS"],
-			languages: ["inglês"],
+            languages: ["inglês"],
             date: new Date(),
+            releasedate: new Date(),
+            rating2: "Everyone",
+
             rating: {
                 value: 50,
                 nVotes: 10
@@ -183,9 +224,14 @@ angular.module('RankingApp').factory('itemFactory', [function () {
                     comment: 'Really fun game. You can build your civ, create trade routes, make allies, win by diplomacy, war, science or even culture.'
                 }
             ],
+            developer: "DICE",
+            publisher: "EA",
             category: ["TBS"],
-			languages: ["inglês"],
+            languages: ["inglês"],
             date: new Date(),
+            releasedate: new Date(),
+            rating2: "Everyone",
+
             rating: {
                 value: 50,
                 nVotes: 10
@@ -203,9 +249,13 @@ angular.module('RankingApp').factory('itemFactory', [function () {
                     comment: 'A true Might and Magic Heroes game. Still play a lot these days'
                 }
             ],
+            developer: "DICE",
+            publisher: "EA",
             category: ["TBS"],
-			languages: ["inglês"],
+            languages: ["inglês"],
             date: new Date(),
+            releasedate: new Date(),
+            rating2: "Everyone",
             rating: {
                 value: 40,
                 nVotes: 10
@@ -227,10 +277,11 @@ angular.module('RankingApp').factory('itemFactory', [function () {
             item[0].rating.value = item[0].rating.value + value;
             item[0].rating.nVotes = item[0].rating.nVotes + 1;
         },
-        
-        getRating: function(id){
-            
+
+        getRating: function (id) {
+
             var item = this.getItemById(id);
+            console.log(item[0]);
             return (item[0].rating.value / item[0].rating.nVotes);
         },
 

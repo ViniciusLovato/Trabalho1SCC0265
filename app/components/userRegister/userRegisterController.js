@@ -59,6 +59,7 @@ angular.module('RankingApp').controller('UserRegisterCtrl', function ($scope, us
             } else {
 				console.log($scope.userRegister);
                 $("#email").removeClass("ng-invalid");
+                alert("Cadastro Realizado com Sucesso!");
                 $location.path('/login/0');
             }
 

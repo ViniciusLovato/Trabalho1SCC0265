@@ -1,7 +1,7 @@
 angular.module('RankingApp').controller('GameRegisterCtrl', function ($scope, userFactory, itemFactory, $location) {
     $scope.user = userFactory.getCurrentUser();
     $scope.gameRegister = {
-        rating: "adult"
+        rating2: "Adult"
     };
     $scope.gameRegister.images = [];
     $scope.gameRegister.extrafields = [];
@@ -19,8 +19,13 @@ angular.module('RankingApp').controller('GameRegisterCtrl', function ($scope, us
     };
 
     $scope.gameRegister.category = [];
-	$scope.gameRegister.languages = [];
-	
+    $scope.gameRegister.languages = [];
+    $scope.gameRegister.comments = [];
+    $scope.gameRegister.rating = {
+        value: 0,
+        nVotes: 0
+    };
+
     var numbernewfields = 0;
     $scope.$on("$viewContentLoaded", function () {
         $('select').material_select(); //necessary for materialize dropdown
@@ -103,9 +108,9 @@ angular.module('RankingApp').controller('GameRegisterCtrl', function ($scope, us
         iterate_newfields();
 
     });
-	
-	$scope.$on("$destroy", function() {
-		$('.material-tooltip').remove();
+
+    $scope.$on("$destroy", function () {
+        $('.material-tooltip').remove();
     });
 
     $scope.registerGame = function () {
@@ -190,7 +195,7 @@ angular.module('RankingApp').controller('GameRegisterCtrl', function ($scope, us
                     var r = new FileReader();
                     r.onloadend = function () {
                         $scope.gameRegister.images.push(r.result);
-                     
+
                         var newfieldname;
                         for (var i = 0; i < newfieldslen; ++i) {
                             var inputnewfield = $(newfields[i]).find('input');
@@ -218,8 +223,8 @@ angular.module('RankingApp').controller('GameRegisterCtrl', function ($scope, us
                         if ($scope.categories.RPG) {
                             $scope.gameRegister.category.push("RPG");
                         }
-						
-						if ($scope.languages.english) {
+
+                        if ($scope.languages.english) {
                             $scope.gameRegister.languages.push("inglês");
                         }
                         if ($scope.languages.french) {
@@ -230,12 +235,18 @@ angular.module('RankingApp').controller('GameRegisterCtrl', function ($scope, us
                         }
 
                         itemFactory.registerItem($scope.gameRegister); //register game
-                        $location.path('/');
+
+
+                        $scope.$apply(function () {
+                            $location.path('/');
+
+                        });
+                        // $location.path('/login/0');
+
                     }
                     r.readAsDataURL(f);
                 }
             });
-
 
 
         } else {

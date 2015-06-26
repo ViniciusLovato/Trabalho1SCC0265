@@ -159,3 +159,8 @@ ul.rating {
 .rating .filled {
     color: red;
 }
+
+.navMyContainer {
+    width: 80%;
+    margin-left: 10%;
+}

@@ -9,7 +9,7 @@
 
         <div class="col l3 m6 s12" ng-repeat="item in getItemsByCategory(category) | limitTo:4 | orderBy: 'date'">
 
-            <div class="card home-card z-depth-3">
+            <div class="card home-card z-depth-3" itemscope itemtype="https://schema.org/VideoGame">
 
                 <div class="card-image">
                     <a href="#/item/{{ item.id }}"><img ng-src="{{ item.images[0] }}" />
@@ -20,13 +20,12 @@
                     <span>Categories: </span>
                     <a href="" class="categoryTag" ng-repeat="cat in item.category" ng-click="go('/list/'+ cat)">+{{ cat }}
                     </a>
-                    <p>{{ item.name }}</p>
-                    <p>{{ item.description }}</p>
+                    <p itemprop="name">{{ item.name }}</p>
+                    <p itemprop="description">{{ item.description }}</p>
                 </div>
                 <div class="card-action">
                     <span class="orange-text">Avaliação: </span>
-                        <rating score="{{ getRate(item.id) }}" number="5" read-only></rating> 
-                    <a href="#">comparativo</a>
+                    <rating score="{{ getRate(item.id) }}" number="5" read-only></rating>
                 </div>
             </div>
         </div>
